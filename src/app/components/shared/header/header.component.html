@@ -1,19 +1,15 @@
-<div>
-    <nav class="h-[50px] bg-gradient-to-b from-slate-950 from-75% to-[#5131f3] to-90% text-white top-0 flex justify-between items-center">
-        <div class="flex w-auto items-center gap-1 ml-2">
-            <img src="logo.png" alt="logo" class="w-10 h-10">
-            <img src="LetrasLogo.png" alt="letras" class="w-35 h-8">
-        </div>
-        <div class="flex justify-between gap-1 items-center mr-2">
-            <a href="">
-                <lucide-angular [img]="userIcon"></lucide-angular>
+<div class="w-full h-[70px] bg-gradient-to-b from-slate-950 from-43% to-main to-90% text-white flex flex-wrap items-center">
+        <div class="w-full flex justify-between items-center">
+            <a href="/home" class="flex w-auto items-center gap-1 ml-2">
+                <img src="logo.png" alt="logo" class="w-10 h-10">
+                <img src="letrasLogo.png" alt="letras" class="w-35 h-8">
             </a>
-            <a href="">
+            <a [routerLink]="['/login']" class="flex justify-between gap-1 items-center mr-2 font-bold">
+                <lucide-angular [img]="userIcon"></lucide-angular>
                 Login
             </a>
-            <a href="">
-                <lucide-angular [img]="justifyIcon"></lucide-angular>
-            </a>
         </div>
-    </nav>
+        <div class="w-full">
+            <navbar/>
+        </div>
 </div>

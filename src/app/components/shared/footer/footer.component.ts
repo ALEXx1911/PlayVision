@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Github, Linkedin, LucideAngularModule, Mail } from 'lucide-angular';
 
 @Component({
   selector: 'app-footer',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule,RouterLink],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
 })
 export class FooterComponent {
   readonly githubIcon= Github;

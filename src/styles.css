@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@theme {
+    --color-main: #5131F3;
+    --color-gradiant: bg-gradient-to-b from-slate-950 from-43% to-main to-90%,
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

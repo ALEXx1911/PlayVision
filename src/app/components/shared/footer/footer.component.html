@@ -1,6 +1,6 @@
-<div class="bottom-0 bg-gradient-to-t from-slate-950 from-75% to-[#5131f3] to-90% text-white h-[6.5rem]">
+<div class="bottom-0 bg-gradient-to-t from-slate-950 from-75% to-[#5131f3] to-90% text-white h-[6.5rem] w-full">
     <div class="flex flex-col items-center gap-1">
-        <img src="LetrasLogo.png" alt="letras" class=" mt-1.5 w-30 h-6">
+        <img src="letrasLogo.png" alt="letras" class=" mt-1.5 w-30 h-6">
         <div class="flex gap-6">
             <div class="flex flex-col items-center">
                 <p class="text-[10px] font-bold">Contacto</p>
@@ -18,12 +18,12 @@
             </div>
             <div class="flex flex-col items-center gap-1">
                 <p class="text-[10px] font-bold">Conócenos</p>
-                <a class="text-[8px]">Sobre nosotros</a>
+                <a [routerLink]="['/aboutUs']" class="text-[8px]">Sobre nosotros</a>
             </div>
             <div class="flex flex-col items-center gap-1">
                 <p class="text-[10px] font-bold">Usuarios</p>
-                <a class="text-[8px]">Login</a>
-                <a class="text-[8px]">Registrase</a>
+                <a [routerLink]="['/login']" class="text-[8px]">Login</a>
+                <a [routerLink]="['/login']" class="text-[8px]">Registrase</a>
             </div>
         </div>
         <p class="text-[8px] mt-1">©2025 PlayVision Todos los derechos reservados</p>
