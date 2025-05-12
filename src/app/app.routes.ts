@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/ligues/ligues.component").then(m => m.default),
     },
     {
+        path: "ligues/:id",
+        loadComponent: () => import("./pages/ligues/league/league.component").then(m => m.default),
+    },
+    {
         path: "login",
         loadComponent: () => import("./pages/login/login.component").then(m => m.default),
     },

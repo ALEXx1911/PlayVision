@@ -2,7 +2,9 @@
     <div class="w-full h-[28px] p-0.5 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%">
         <div class="flex items-center">
             <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
-            <span class="font-bold text-white text-xs">La Liga</span>
+            <a [routerLink]="[`/ligues/${id}`]">
+                <span class="font-bold text-white text-xs">La Liga</span>
+            </a>
             <lucide-angular [img]="bookmarck" class="fill-white"/>
         </div>
         <lucide-angular [img]="uparrow" class="fill-white"/>
