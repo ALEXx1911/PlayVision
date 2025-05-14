@@ -20,3 +20,18 @@ export interface MaxGoleadores {
     throwawaygoal: number;
     total: number;
 }
+export interface GeneralStats{
+    position: number;
+    name: string;
+    matchesplayed: number;
+    minutesplayed: number;
+    total: number;
+}
+export interface TopCentrocampistas{
+    position: number;
+    name: string;
+    matchesplayed: number;
+    mediapasesacertados: number;
+    asistencias: number;
+    media:number;
+}

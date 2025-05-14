@@ -19,11 +19,11 @@ export const routes: Routes = [
     },
     {
         path: "ligues",
-        loadComponent: () => import("./pages/ligues/ligues.component").then(m => m.default),
+        loadComponent: () => import("./pages/tournaments/ligues/ligues.component").then(m => m.default),
     },
     {
         path: "ligues/:id",
-        loadComponent: () => import("./pages/ligues/league/league.component").then(m => m.default),
+        loadComponent: () => import("./pages/tournaments/ligues/league/league.component").then(m => m.default),
     },
     {
         path: "login",
@@ -43,7 +43,7 @@ export const routes: Routes = [
     },
     {
         path: "tournament",
-        loadComponent: () => import("./pages/tournament/tournament.component").then(m => m.default),
+        loadComponent: () => import("./pages/tournaments/tournament/tournament.component").then(m => m.default),
     },
     {
         path:"**",

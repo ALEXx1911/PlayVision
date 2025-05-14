@@ -1,11 +1,13 @@
 import { Component, signal } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
-import { ArrowUpCircle, Bookmark, LucideAngularModule } from "lucide-angular";
+import { LucideAngularModule } from "lucide-angular";
 import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel} from "@tanstack/angular-table";
 import { NgClass } from "@angular/common";
 import { RouterLink } from "@angular/router";
-import { ClubLeaguePosition } from "../../../models/stats-interdaces";
-import { LeagueColumns } from "../../../components/shared/general-stats/column-headers";
+import { ClubLeaguePosition } from "../../../../models/stats-interdaces";
+import { LeagueColumns } from "../../utils/column-headers";
+import { CdkAccordionModule } from "@angular/cdk/accordion";
+import { Icons } from "../../utils/icons";
 
   const ELEMENT_DATA: ClubLeaguePosition[] = [
     {position: 1, name: 'FC Barcelona', points: 80, matchesplayed:30,win:25,draft:2,lose:4,goalfavor:102,goalagainst:30,goaldifference:"+70",lastmatches:"VLVVE"},
@@ -32,12 +34,13 @@ import { LeagueColumns } from "../../../components/shared/general-stats/column-h
 
 @Component({
     selector:"league-table",
-    imports:[NgClass,LucideAngularModule,MatTableModule,FlexRenderDirective,RouterLink],
+    imports:[NgClass,LucideAngularModule,MatTableModule,FlexRenderDirective,RouterLink,CdkAccordionModule],
     templateUrl:"./league-table.component.html"
 })
 export class LeagueTable{
-    readonly bookmarck = Bookmark;
-    readonly uparrow = ArrowUpCircle;
+    readonly bookmarck = Icons.bookMark;
+    readonly uparrow = Icons.arrowUpCircle;
+    readonly downarrow = Icons.arrowDownCircle;
     readonly id = 1;
     public data = signal<ClubLeaguePosition[]>(ELEMENT_DATA);
 

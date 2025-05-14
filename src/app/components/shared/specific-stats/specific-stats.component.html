@@ -1,33 +1,35 @@
 <div class="w-full">
-    <span>{{title()}}</span>
+        <p class="w-full bg-black text-white font-semibold text-center">{{title()}}</p>
     <div>
-        <table>
-            <thead class="bg-black text-white px-0.5">
-                @for (header of table.getHeaderGroups(); track header.id) {
-                    <tr>
-                        @for (headerItem of header.headers; track headerItem.id) {
-                            <th scope="col" class="py-1 px-1.5 font-semibold tracking-wide text-xs whitespace-nowrap">
-                                <ng-container *flexRender="headerItem.column.columnDef.header; props:headerItem.getContext();let header">
-                                    <div [innerHTML]="header" class=""></div>
-                                </ng-container>
-                            </th>
-                        }
-                    </tr>
-                }
-            </thead>
-            <tbody>
-                @for (row of table.getRowModel().rows; track row.id) {
-                    <tr class="hover:bg-gray-50">
-                        @for (cell of row.getVisibleCells(); track cell.id) {
-                            <td class="whitespace-nowrap py-1 px-1.5">
-                                <ng-container *flexRender="cell.column.columnDef.cell;props:cell.getContext();let cell">
-                                    <div [innerHTML]="cell"></div>                                    
-                                </ng-container>
-                            </td>
-                        }
-                    </tr>
-                }
-            </tbody>
-        </table>
+        @if (table()) {
+            <table class="w-full">
+                <thead class="bg-gradient-to-b from-slate-950 from-43% to-main to-90% text-white px-0.5">
+                    @for (header of table()!.getHeaderGroups(); track header.id) {
+                        <tr>
+                            @for (headerItem of header.headers; track headerItem.id) {
+                                <th scope="col" class="py-1 px-1 font-semibold tracking-wide text-xs whitespace-nowrap w-fit">
+                                    <ng-container *flexRender="headerItem.column.columnDef.header; props:headerItem.getContext();let header">
+                                        <div [innerHTML]="header" class=""></div>
+                                    </ng-container>
+                                </th>
+                            }
+                        </tr>
+                    }
+                </thead>
+                <tbody>
+                    @for (row of table()!.getRowModel()!.rows; track row.id) {
+                        <tr class="hover:bg-gray-50">
+                            @for (cell of row.getVisibleCells(); track cell.id) {
+                                <td class="whitespace-nowrap py-1 text-[14px] text-center">
+                                    <ng-container *flexRender="cell.column.columnDef.cell;props:cell.getContext();let cell">
+                                        <div [innerHTML]="cell"></div>                                    
+                                    </ng-container>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
     </div>
 </div>

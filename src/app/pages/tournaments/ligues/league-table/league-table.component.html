@@ -1,0 +1,70 @@
+<div class="flex flex-col w-full h-fit overflow-hidden border-1 border-black rounded-xs">
+    <cdk-accordion class="w-full h-fit">
+        <cdk-accordion-item #item="cdkAccordionItem" class="w-full h-fit">
+            <div class="w-full h-[28px] p-0.5 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%">
+                <div class="flex items-center">
+                    <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
+                    <a [routerLink]="[`/ligues/${id}`]">
+                        <span class="font-bold text-white text-xs">La Liga</span>
+                    </a>
+                    <lucide-angular [img]="bookmarck" class="fill-white"/>
+                </div>
+                <button (click)="item.toggle()" [attr.aria-expanded]="item.expanded" [attr.id]="1"
+                [attr.aria-controls]="'item-body'+ 1">
+                @if (item.expanded) {
+                    <lucide-angular [img]="uparrow" class="fill-white"/>  
+                }@else {
+                    <lucide-angular [img]="downarrow" class="fill-white"/>
+                }
+                </button>
+            </div>
+            @if (item.expanded) {
+                <div class="p-0.5 overflow-x-auto" role="region" [attr.aria-labelledby]="'item-'+1"
+                [attr.id]="'item-body' + 1">
+                    <table class="w-full table-auto text-sm text-left min-w-full">
+                        <thead class="bg-black text-white px-0.5">
+                            @for (header of table.getHeaderGroups(); track header.id) {
+                                <tr>
+                                    @for (headerItem of header.headers; track headerItem.id) {
+                                        <th scope="col" class="py-1 px-1.5 font-semibold tracking-wide text-xs whitespace-nowrap"
+                                        [ngClass]="{'w-[10px] text-center':headerItem.column.id === 'position',
+                                            'min-w-[120px]':headerItem.id === 'name',
+                                            'w-[40px] text-center': ['points','win','draft','lose'].includes(headerItem.column.id),
+                                            'w-[60px] text-center': ['goalfavor','goalagainst','goaldifference'].includes(headerItem.column.id),
+                                            'min-w-[100px]': headerItem.column.id === 'lastmatches',
+                                        }">
+                                            <ng-container *flexRender="headerItem.column.columnDef.header; props:headerItem.getContext();let header">
+                                                <div [innerHTML]="header" class=""></div>
+                                            </ng-container>
+                                        </th>
+                                    }
+                                </tr>
+                            }
+                        </thead>
+                        <tbody>
+                            @for (row of table.getRowModel().rows; track row.id) {
+                                <tr class="hover:bg-gray-50 {{  row.index === table.getRowCount()-1 || row.index === table.getRowCount()-2 || row.index === table.getRowCount()-3  ? 'bg-red-300' : ''}} 
+                                {{ row.index === 0 || row.index === 1 || row.index === 2 || row.index === 3 ? 'bg-blue-300' : ''}} {{row.index === 4 ? 'bg-amber-200': ''}} {{row.index === 5 ? 'bg-green-300': ''}}">
+                                    @for (cell of row.getVisibleCells(); track cell.id) {
+                                        <td class="whitespace-nowrap py-1 px-1.5"
+                                        [ngClass]="{
+                                            'font-semibold text-sm':['position','points'].includes(cell.column.id),
+                                            'text-center':['position','points','win','draft','lose','goalfavor','goalagainst','goaldifference','lastmatches'].includes(cell.column.id),
+                                            
+                                        }">
+                                            <ng-container *flexRender="cell.column.columnDef.cell;props:cell.getContext();let cell">
+                                                <div [innerHTML]="cell"></div>                                    
+                                            </ng-container>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </cdk-accordion-item>
+            
+    </cdk-accordion>
+         
+    

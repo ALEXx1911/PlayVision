@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/angular-table";
-import { ClubLeaguePosition, MaxGoleadores } from "../../../models/stats-interdaces";
+import { ClubLeaguePosition, GeneralStats, MaxGoleadores, TopCentrocampistas } from "../../../models/stats-interdaces";
 
 export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
     {
@@ -104,5 +104,75 @@ export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
         accessorFn: (row) => row.position,
         cell: info => info.getValue(),
         header: () => "Total",
+    }
+  ];
+  export const GeneralStatsColumns: ColumnDef<GeneralStats>[] = [
+    {
+      id:"position",
+        accessorFn: (row) => row.position,
+        cell: info => info.getValue(),
+        header: () => "Pº",
+    },
+    {
+      id:"name",
+        accessorFn: (row) => row.name,
+        cell: info => info.getValue(),
+        header: () => "Nombre",
+    },
+    {
+      id:"minutesplayed",
+        accessorFn: (row) => row.minutesplayed,
+        cell: info => info.getValue(),
+        header: () => "MTsp",
+    },
+    {
+      id:"matchesplayed",
+        accessorFn: (row) => row.matchesplayed,
+        cell: info => info.getValue(),
+        header: () => "MP",
+    },
+    {
+      id:"total",
+        accessorFn: (row) => row.total,
+        cell: info => info.getValue(),
+        header: () => "Total",
+    }
+  ];
+  export const CentrocampistasColumns: ColumnDef<TopCentrocampistas>[] = [
+    {
+      id:"position",
+        accessorFn: (row) => row.position,
+        cell: info => info.getValue(),
+        header: () => "Pº",
+    },
+    {
+      id:"name",
+        accessorFn: (row) => row.name,
+        cell: info => info.getValue(),
+        header: () => "Nombre",
+    },
+    {
+      id:"matchesplayed",
+        accessorFn: (row) => row.matchesplayed,
+        cell: info => info.getValue(),
+        header: () => "MP",
+    },
+    {
+      id:"mediapasesacertados",
+        accessorFn: (row) => row.mediapasesacertados,
+        cell: info => info.getValue(),
+        header: () => "MPA",
+    },
+    {
+      id:"asistencias",
+        accessorFn: (row) => row.asistencias,
+        cell: info => info.getValue(),
+        header: () => "A",
+    },
+    {
+      id:"media",
+        accessorFn: (row) => row.media,
+        cell: info => info.getValue(),
+        header: () => "Media",
     }
   ];

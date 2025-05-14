@@ -1,15 +1,9 @@
-import { Component, computed, input, signal } from "@angular/core";
+import { Component, computed, input, InputSignal, signal } from "@angular/core";
 import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel } from "@tanstack/angular-table";
-import { MaxGoleadoresColumns } from "../general-stats/column-headers";
+import { MaxGoleadoresColumns } from "../../../pages/tournaments/utils/column-headers";
 import { MatTableModule } from "@angular/material/table";
 
-const ELEMENT_DATA2= [
-    {position: 1,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
-    {position: 2,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
-    {position: 3,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
-    {position: 4,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
-    {position: 5,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
-];
+
 
 @Component({
     selector:"specific-stats",
@@ -17,12 +11,24 @@ const ELEMENT_DATA2= [
     templateUrl:"./specific-stats.component.html"
 })
 export class SpecificStats{
-    readonly title = input("");
-    public data = signal(ELEMENT_DATA2);
+    readonly title = input.required<string>();
+    public data = input.required<any[]>();
+    public defaultColumns=input.required<any[]>();
 
-    public table = createAngularTable( () => ({
-      data: this.data(),
-      getCoreRowModel: getCoreRowModel(),
-      columns: MaxGoleadoresColumns
-    }));
+    public table = computed( () => {
+        if (this.data() || this.defaultColumns()) {
+            return createAngularTable( () => ({
+              data: this.data(),
+              getCoreRowModel: getCoreRowModel(),
+              columns: this.intoArray(this.defaultColumns)
+            }));
+        }else
+            return null;
+    });
+    
+
+    public intoArray(signal : InputSignal<any[]>){
+        const res:ColumnDef<any>[]= signal().map(data => data); 
+        return res;
+    }
 }
