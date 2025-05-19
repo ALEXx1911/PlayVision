@@ -4,6 +4,7 @@ import { SpecificStats } from "../../../components/shared/specific-stats/specifi
 import { CentrocampistasColumns, GeneralStatsColumns, LeagueColumns, MaxGoleadoresColumns } from "../utils/column-headers";
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { Icons } from "../utils/icons";
+import { GeneralContainer } from "../../../components/shared/component-container/container.component";
 
 const ELEMENT_DATA2= [
     {position: 1,name:"Rafa",matchesplayed:30,headgoal:25,penalty:3,throwawaygoal:4,total:32},
@@ -28,11 +29,11 @@ const ELEMENT_DATA3= [
 ];
 @Component({
     selector:"best-clubs-stats",
-    imports: [LucideAngularModule, SpecificStats,CdkAccordionModule],
+    imports: [LucideAngularModule, SpecificStats, CdkAccordionModule, GeneralContainer],
     templateUrl:"./best-clubs-stats.component.html"
 })
 export class BestClubsStats{
-    readonly GeneralTitle = input("");
+    readonly clubStatsTitle = input<string>();
     readonly uparrow = Icons.arrowUpCircle;
     readonly SpecificTitle1 = signal("Mejor Visitante");
     readonly datos1= ELEMENT_DATA2;

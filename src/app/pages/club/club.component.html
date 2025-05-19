@@ -1,1 +1,13 @@
-<p>club works!</p>
+<div class="w-full text-white mt-2.5 h-[85px] rounded-[1px] overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]">
+    <div class="flex items-center justify-center gap-4">
+        <img class=" w-[60px] h-[60px]"
+          alt="FC Barcelona Logo" src="escudo1.png"/>
+        <div class="font-extrabold text-[15px] text-center tracking-[0] leading-[normal]">
+              F.C BARCELONA
+        </div>
+        <img class=" w-5 h-5"
+          alt="Spain flag" src="spain.png"/>
+    </div>
+    <navbar [options]="navOptions()"></navbar>
+</div>
+  <router-outlet></router-outlet>

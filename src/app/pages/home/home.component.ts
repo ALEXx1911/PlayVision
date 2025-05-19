@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { Navbar } from "../../components/shared/navbar/navbar.component";
 import { LeagueMatches } from "./league-matches/league-matches.component";
+import { BestXI } from "../../components/shared/bestXI/bestXI.component";
 
 @Component({
   selector: 'app-home',
-  imports: [LeagueMatches],
+  imports: [LeagueMatches, BestXI],
   templateUrl: './home.component.html'
 })
 export default class HomeComponent {

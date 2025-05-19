@@ -10,8 +10,26 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/about-us/about-us.component").then(m => m.default),
     },
     {
-        path: "club",
+        path: "club/:clubId",
         loadComponent: () => import("./pages/club/club.component").then(m => m.default),
+        children: [
+            {
+                path: "partidosClub",
+                loadComponent: () => import("./pages/club/club-home/club-home.component").then(m => m.default),
+            },
+            {
+                path: "plantilla",
+                loadComponent: () => import("./pages/club/plantilla/club-plantilla.component").then(m => m.default),
+            },
+            {
+                path: "palmares",
+                loadComponent: () => import("./pages/club/palmares/club-palmares.component").then(m => m.default),
+            },
+            {
+                path: "historicos",
+                loadComponent: () => import("./pages/club/historicos/club-historicos.component").then(m => m.default),
+            }
+        ]
     },
     {
         path: "compare",

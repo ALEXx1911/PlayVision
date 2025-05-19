@@ -35,3 +35,24 @@ export interface TopCentrocampistas{
     asistencias: number;
     media:number;
 }
+export interface TournamentWinners{
+    position: number;
+    club: string;
+    totalplayed: number;
+    wins: number;
+}
+export interface ClubPlantilla{
+    position: number;
+    name: string;
+    nationality: string;
+    age: number;
+    positionplayer: string;
+    matchesplayed: number;
+    goals: number;
+    assists: number;
+    yellowcards: number;
+    redcards: number;
+    minutesplayed: number;
+    tackles: number;
+    passes: number;
+}

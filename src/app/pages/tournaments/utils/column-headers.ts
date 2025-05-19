@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/angular-table";
-import { ClubLeaguePosition, GeneralStats, MaxGoleadores, TopCentrocampistas } from "../../../models/stats-interdaces";
+import { ClubLeaguePosition, ClubPlantilla, GeneralStats, MaxGoleadores, TopCentrocampistas, TournamentWinners } from "../../../models/stats-interfaces";
 
 export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
     {
@@ -175,4 +175,110 @@ export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
         cell: info => info.getValue(),
         header: () => "Media",
     }
+  ];
+  export const TournamentWinnersStatsColumns: ColumnDef<TournamentWinners>[] = [
+    {
+      id:"position",
+        accessorFn: (row) => row.position,
+        cell: info => info.getValue(),
+        header: () => "Pº",
+    },
+    {
+      id:"Club",
+        accessorFn: (row) => row.club,
+        cell: info => info.getValue(),
+        header: () => "Club",
+    },
+    {
+      id:"minutesplayed",
+        accessorFn: (row) => row.totalplayed,
+        cell: info => info.getValue(),
+        header: () => "T.Jugados",
+    },
+    {
+      id:"total",
+        accessorFn: (row) => row.wins,
+        cell: info => info.getValue(),
+        header: () => "Total",
+    }
+  ];
+  export const ClubPlantillaColumns: ColumnDef<ClubPlantilla>[] = [
+    {
+      id:"position",
+        accessorFn: (row) => row.position,
+        cell: info => info.getValue(),
+        header: () => "Pº",
+    },
+    {
+      id:"name",
+        accessorFn: (row) => row.name,
+        cell: info => info.getValue(),
+        header: () => "Nombre",
+    },
+    {
+      id:"age",
+        accessorFn: (row) => row.age,
+        cell: info => info.getValue(),
+        header: () => "Age",
+    },
+    {
+      id:"nationality",
+        accessorFn: (row) => row.nationality,
+        cell: info => info.getValue(),
+        header: () => "Nacionalidad",
+    },
+    {
+      id:"positionplayer",
+        accessorFn: (row) => row.positionplayer,
+        cell: info => info.getValue(),
+        header: () => "POS",
+    },
+    {
+      id:"matchesplayed",
+        accessorFn: (row) => row.matchesplayed,
+        cell: info => info.getValue(),
+        header: () => "PJ",
+    },
+    {
+      id:"minutesplayed",
+        accessorFn: (row) => row.minutesplayed,
+        cell: info => info.getValue(),
+        header: () => "Min",
+    },
+    {
+      id:"goals",
+        accessorFn: (row) => row.goals,
+        cell: info => info.getValue(),
+        header: () => "G",
+    },
+    {
+      id:"assists",
+        accessorFn: (row) => row.assists,
+        cell: info => info.getValue(),
+        header: () => "A",
+    },
+    {
+      id:"passes",
+        accessorFn: (row) => row.passes,
+        cell: info => info.getValue(),
+        header: () => "PC",
+    },
+    {
+      id:"yellowcards",
+        accessorFn: (row) => row.yellowcards,
+        cell: info => info.getValue(),
+        header: () => "YC",
+    },
+    {
+      id:"redcards",
+        accessorFn: (row) => row.redcards,
+        cell: info => info.getValue(),
+        header: () => "RC",
+    },
+    {
+      id:"tackles",
+        accessorFn: (row) => row.tackles,
+        cell: info => info.getValue(),
+        header: () => "TK",
+    },
   ];

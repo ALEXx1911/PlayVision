@@ -1,8 +1,4 @@
-<div class="w-full flex flex-col items-center mt-2.5 border-1 border-black">
-    <div class="w-full flex p-1 bg-gradient-to-b from-slate-950 from-43% to-main to-90% justify-center">
-        <p class="text-white font-semibold text-center">{{GeneralTitle()}}</p>
-        <lucide-angular [img]="uparrow" class="fill-white"/>
-    </div>
+<container [isCollapsable]="true" [title]="playerStatsTitle()" [isCollapsed]="true">
     <div class="w-full grid grid-cols-2 row-auto gap-1 p-0.5">
         <specific-stats [title]="SpecificTitle1()" [defaultColumns]="columns1" [data]="datos1"/>
         <specific-stats [title]="SpecificTitle2()" [defaultColumns]="columns2" [data]="datos2"/>
@@ -12,4 +8,4 @@
         <specific-stats [title]="SpecificTitle6()" [defaultColumns]="columns2" [data]="datos2"/>    
     </div>
     <p class="mt-1.5"><span class="font-semibold">Leyenda:</span> </p>
-</div>
+</container>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import {AlignJustifyIcon, LucideAngularModule, UserRound} from "lucide-angular";
 import { Navbar } from "../navbar/navbar.component";
 import { RouterLink } from '@angular/router';
@@ -11,4 +11,26 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
   readonly justifyIcon = AlignJustifyIcon;
   readonly userIcon= UserRound;
+  readonly navOptions = signal([
+    {
+      label:"Partidos",
+      route:"/home"
+    },
+    {
+      label:"Torneos",
+      route:"/ligues"
+    },
+    {
+      label:"Equipos",
+      route:"/club"
+    },
+    {
+      label:"Comparar",
+      route:"/compare"
+    },
+    {
+      label:"Jugadores",
+      route:"/player"
+    },
+  ]);
 }

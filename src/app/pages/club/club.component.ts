@@ -1,11 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { Navbar } from "../../components/shared/navbar/navbar.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-club',
-  imports: [],
+  selector: 'club',
+  imports: [Navbar,RouterOutlet],
   templateUrl: './club.component.html',
   styleUrl: './club.component.css'
 })
 export default class ClubComponent {
-
+  readonly navOptions = signal([
+    {
+      label:"Partidos",
+      route:"partidosClub"
+    },
+    {
+      label:"Plantilla",
+      route:"plantilla"
+    },
+    {
+      label:"Palmares",
+      route:"palmares"
+    },
+    {
+      label:"Historicos",
+      route:"historicos"
+    },
+  ]);
 }

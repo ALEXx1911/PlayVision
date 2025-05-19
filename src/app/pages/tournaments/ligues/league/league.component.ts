@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { LeagueTable } from "../league-table/league-table.component";
 import { BestPlayersStats } from "../../best-players-stats/best-players-stats.component";
 import { BestClubsStats } from '../../best-teams-stats/best-clubs-stats.component';
+import { BestXI } from "../../../../components/shared/bestXI/bestXI.component";
 
 @Component({
   selector: 'app-league',
-  imports: [LeagueTable, BestPlayersStats, BestClubsStats],
+  imports: [LeagueTable, BestPlayersStats, BestClubsStats, BestXI],
   templateUrl: './league.component.html',
   styleUrl: './league.component.css'
 })

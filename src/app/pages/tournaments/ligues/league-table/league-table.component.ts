@@ -1,10 +1,10 @@
-import { Component, signal } from "@angular/core";
+import { Component, input, signal } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
 import { LucideAngularModule } from "lucide-angular";
 import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel} from "@tanstack/angular-table";
 import { NgClass } from "@angular/common";
 import { RouterLink } from "@angular/router";
-import { ClubLeaguePosition } from "../../../../models/stats-interdaces";
+import { ClubLeaguePosition } from "../../../../models/stats-interfaces";
 import { LeagueColumns } from "../../utils/column-headers";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
 import { Icons } from "../../utils/icons";
@@ -43,6 +43,7 @@ export class LeagueTable{
     readonly downarrow = Icons.arrowDownCircle;
     readonly id = 1;
     public data = signal<ClubLeaguePosition[]>(ELEMENT_DATA);
+    readonly isCollapsed = input<boolean>();
 
     public table = createAngularTable( () => ({
       data: this.data(),

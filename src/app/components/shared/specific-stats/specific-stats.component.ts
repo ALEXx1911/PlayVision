@@ -1,6 +1,5 @@
 import { Component, computed, input, InputSignal, signal } from "@angular/core";
 import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel } from "@tanstack/angular-table";
-import { MaxGoleadoresColumns } from "../../../pages/tournaments/utils/column-headers";
 import { MatTableModule } from "@angular/material/table";
 
 

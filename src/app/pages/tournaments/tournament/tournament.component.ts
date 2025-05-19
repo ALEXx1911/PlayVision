@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { BestPlayersStats } from "../best-players-stats/best-players-stats.component";
+import { BestXI } from "../../../components/shared/bestXI/bestXI.component";
 
 @Component({
   selector: 'app-tournament',
-  imports: [],
-  templateUrl: './tournament.component.html',
-  styleUrl: './tournament.component.css'
+  imports: [BestPlayersStats, BestXI],
+  templateUrl: './tournament.component.html'
 })
 export default class TournamentComponent {
-
+  readonly playerStatsTitle = signal("Best Players Stats");
+  readonly historicalStatsTitle = signal("Historical Stats");
 }

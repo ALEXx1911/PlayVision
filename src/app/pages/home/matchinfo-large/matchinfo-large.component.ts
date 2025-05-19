@@ -1,9 +1,10 @@
 import { Component, input } from "@angular/core";
+import { RouterLink} from "@angular/router";
 import { ArrowDownCircleIcon, ChartNetwork, LucideAngularModule } from "lucide-angular";
 
 @Component({
     selector:"matchinfo-large",
-    imports:[LucideAngularModule],
+    imports:[LucideAngularModule,RouterLink],
     templateUrl:"./matchinfo-large.component.html",
 })
 export default class MatchInfoLarge{

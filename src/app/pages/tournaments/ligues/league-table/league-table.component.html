@@ -18,7 +18,7 @@
                 }
                 </button>
             </div>
-            @if (item.expanded) {
+            @if (item.expanded === isCollapsed()) {
                 <div class="p-0.5 overflow-x-auto" role="region" [attr.aria-labelledby]="'item-'+1"
                 [attr.id]="'item-body' + 1">
                     <table class="w-full table-auto text-sm text-left min-w-full">
@@ -66,5 +66,5 @@
         </cdk-accordion-item>
             
     </cdk-accordion>
-         
+</div>       
     

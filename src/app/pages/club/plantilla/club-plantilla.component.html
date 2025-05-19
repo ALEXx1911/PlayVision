@@ -1,0 +1,8 @@
+<div class="flex flex-col w-full h-fit p-0.5 gap-2.5">
+    <p class="text-center mt-2 font-bold">Plantilla <span class="text-main">{{temporada()}}</span></p>
+    <container [title]="'Todos los jugadores'" [isCollapsable]="true" [isCollapsed]="false">
+        <specific-stats [defaultColumns]="columns" [data]="plantilla()" [title]="''"/>
+    </container>
+    <best-player-stats [playerStatsTitle]="'Jugadores relevantes'"/>
+    <bestXI/>
+</div>
