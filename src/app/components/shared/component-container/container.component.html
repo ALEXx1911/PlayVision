@@ -1,8 +1,7 @@
 <div class="flex flex-col w-full h-fit overflow-hidden border-2 border-black rounded-xs items-center">
     <cdk-accordion class="w-full h-fit">
-        <cdk-accordion-item #item="cdkAccordionItem" class="w-full h-full">
-            <div class="w-full h-[32px] px-1 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%
-              ">
+        <cdk-accordion-item #item="cdkAccordionItem" class="w-full h-fit">
+            <div class="w-full h-[32px] px-1 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%">
                 <div class="flex items-center">
                     @if (hasFlag()) {
                         <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
@@ -23,9 +22,11 @@
                         </button>
                   }  
             </div>
-            @if (item.expanded == isCollapsed()) {
-                    <ng-content></ng-content>
-            }
-          </cdk-accordion-item>
-      </cdk-accordion>
+            <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out h-fit"
+                [style.maxHeight]="item.expanded ? '800px' : '0px'"
+                >
+                <ng-content></ng-content>
+            </div>
+        </cdk-accordion-item>
+    </cdk-accordion>
 </div>

@@ -2,6 +2,11 @@
 @import "tailwindcss";
 @theme {
     --color-main: #5131F3;
+    --color-custom-gray:#eaf1fb;
+    --color-champions:rgba(81, 49, 243, 0.24);
+    --color-europaLeague:rgba(255, 189, 9, 0.24);
+    --color-conferenceLeague:rgba(1, 234, 31, 0.24);
+    --color-descent:rgba(255, 0, 0, 0.24);
     --color-gradiant: bg-gradient-to-b from-slate-950 from-43% to-main to-90%,
 }
 html, body { height: 100%; }

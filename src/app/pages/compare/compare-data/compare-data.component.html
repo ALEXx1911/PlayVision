@@ -1,0 +1,72 @@
+<div class="flex flex-col items-center w-full h-fit">
+    <div class="flex gap-2 items-center">
+        <p class="font-bold text-black">Datos personales</p>
+        <lucide-angular [img]="iconPlayer" class="w-6"/>
+    </div>
+    <div class="w-full flex gap-2 p-2">
+        <div class="border-2 border-main w-full flex flex-col items-start rounded-xl p-0.5">
+            <lucide-angular [img]="iconPlayer" class="w-6 self-center"/>
+            @for (playerData of playerDataFields; track $index) {
+                <div class="flex items-center gap-2">
+                    <p class="font-semibold ml-3">{{playerData.field}}:</p>
+                        @if (playerData.field === 'Nacionalidad') {
+                            <img src="{{playerData.value}}" alt="xd" class="w-8 h-8"/>
+                        }@else if (playerData.field === 'Club') {
+                            <img src="{{playerData.value}}" alt="xd" class="w-12 h-12"/>
+                        }@else {
+                            <span class="font-normal">{{playerData.value}}</span>
+                        }    
+                </div>
+            }
+        </div>
+        <div class="border-2 border-main w-full flex flex-col items-start rounded-xl p-0.5">
+            <lucide-angular [img]="iconPlayer" class="w-4 self-center"/>
+            @for (playerData of playerDataFields; track $index) {
+                <div class="flex items-center gap-2">
+                    <p class="font-semibold ml-3">{{playerData.field}}:</p>
+                        @if (playerData.field === 'Nacionalidad') {
+                            <img src="{{playerData.value}}" alt="xd" class="w-8 h-8"/>
+                        }@else if (playerData.field === 'Club') {
+                            <img src="{{playerData.value}}" alt="xd" class="w-12 h-12"/>
+                        }@else {
+                            <span class="font-normal">{{playerData.value}}</span>
+                        }          
+                </div>
+            }
+        </div>
+    </div>
+    <div class="flex gap-2 items-center">
+        <p class="font-bold text-black">Estadisticas Individuales</p>
+        <lucide-angular [img]="iconChart" class="w-6"/>
+    </div>
+    <div class="w-full flex gap-2 p-2">
+        <div class="border-2 border-main w-full flex flex-col items-start rounded-xl p-0.5">
+            <p>Grafico stats</p>
+        </div>
+        <div class="border-2 border-main w-full flex flex-col items-start rounded-xl p-0.5">
+            <p>Grafico stats 2</p>
+        </div>
+    </div>
+    <div class="flex gap-2 items-center">
+        <p class="font-bold text-black">Palmares</p>
+        <lucide-angular [img]="iconTrophy" class="w-6"/>
+    </div>
+    <div class="w-full flex flex-col gap-2 p-2">
+        <div class="flex gap-2">
+            <container [title]="'Clubes'" class="w-full">
+                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
+            </container>
+            <container [title]="'Clubes'" class="w-full">
+                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
+            </container>
+        </div>
+        <div class="flex gap-2">
+            <container [title]="'Selección'" class="w-full">
+                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
+            </container>
+            <container [title]="'Selección'" class="w-full">
+                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
+            </container>
+        </div>
+    </div>
+</div>

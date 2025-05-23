@@ -1,4 +1,4 @@
-import { ArrowDownCircle, ArrowUpCircle, AtSignIcon, Bookmark, ChartNetworkIcon, Github, Linkedin, LockIcon, Mail, Trophy, UserRoundIcon } from "lucide-angular";
+import { ArrowDownCircle, ArrowUpCircle, AtSignIcon, Bookmark, ChartNetwork, ChartNetworkIcon, Github, Linkedin, LockIcon, Mail, Trophy, UserRoundIcon } from "lucide-angular";
 
 export const Icons = {
     arrowUpCircle: ArrowUpCircle,
@@ -8,7 +8,7 @@ export const Icons = {
     mail: Mail,
     bookMark: Bookmark,
     profile: UserRoundIcon,
-    chart: ChartNetworkIcon,
+    chart: ChartNetwork,
     at: AtSignIcon,
     lock: LockIcon,
     trophy: Trophy,

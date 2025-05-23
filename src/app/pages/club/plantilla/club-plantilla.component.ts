@@ -1,7 +1,7 @@
 import { Component, signal } from "@angular/core";
 import { GeneralContainer } from "../../../components/shared/component-container/container.component";
 import { SpecificStats } from "../../../components/shared/specific-stats/specific-stats.component";
-import { ClubPlantillaColumns } from "../../tournaments/utils/column-headers";
+import { ClubPlantillaColumns } from "../../utils/column-headers";
 import { BestPlayersStats } from "../../tournaments/best-players-stats/best-players-stats.component";
 import { BestXI } from "../../../components/shared/bestXI/bestXI.component";
 

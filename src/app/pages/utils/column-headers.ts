@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/angular-table";
-import { ClubLeaguePosition, ClubPlantilla, GeneralStats, MaxGoleadores, TopCentrocampistas, TournamentWinners } from "../../../models/stats-interfaces";
+import { ClubLeaguePosition, ClubPlantilla, GeneralStats, MaxGoleadores, TopCentrocampistas, TournamentWinners } from "../../models/stats-interfaces";
 
 export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
     {
@@ -282,3 +282,129 @@ export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
         header: () => "TK",
     },
   ];
+export const PlayerStatsCurrentSeasonColumns: ColumnDef<any>[] = [
+  {
+    id:"tournament",
+    accessorFn: (row) => row.tournament,
+    cell: info => info.getValue(),
+    header: () => "Torneo",
+  },
+  {
+    id:"matchesplayed",
+    accessorFn: (row) => row.matchesplayed,
+    cell: info => info.getValue(),
+    header: () => "PJ",
+  },
+  {
+    id:"minutesplayed",
+    accessorFn: (row) => row.minutesplayed,
+    cell: info => info.getValue(),
+    header: () => "Min",
+  },
+  {
+    id:"goals",
+    accessorFn: (row) => row.goals,
+    cell: info => info.getValue(),
+    header: () => "G",
+  },
+  {
+    id:"assists",
+    accessorFn: (row) => row.assists,
+    cell: info => info.getValue(),
+    header: () => "A",
+  },
+  {
+    id:"passes",
+    accessorFn: (row) => row.passes,
+    cell: info => info.getValue(),
+    header: () => "PC",
+  },
+  {
+    id:"yellowcards",
+    accessorFn: (row) => row.yellowcards,
+    cell: info => info.getValue(),
+    header: () => "YC",
+  },
+  {
+    id:"redcards",
+    accessorFn: (row) => row.redcards,
+    cell: info => info.getValue(),
+    header: () => "RC",
+  },
+  {
+    id:"tackles",
+    accessorFn: (row) => row.tackles,
+    cell: info => info.getValue(),
+    header: () => "TK",
+  }
+];
+export const PlayerStatsCareerColumns: ColumnDef<any>[] = [
+  {
+    id:"club",
+    accessorFn: (row) => row.club,
+    cell: info => info.getValue(),
+    header: () => "Club",
+  },
+  {
+    id:"season",
+    accessorFn: (row) => row.season,
+    cell: info => info.getValue(),
+    header: () => "Temporada",
+  },
+  {
+    id:"matchesplayed",
+    accessorFn: (row) => row.matchesplayed,
+    cell: info => info.getValue(),
+    header: () => "PJ",
+  },
+  {
+    id:"minutesplayed",
+    accessorFn: (row) => row.minutesplayed,
+    cell: info => info.getValue(),
+    header: () => "Min",
+  },
+  {
+    id:"goals",
+    accessorFn: (row) => row.goals,
+    cell: info => info.getValue(),
+    header: () => "G",
+  },
+  {
+    id:"assists",
+    accessorFn: (row) => row.assists,
+    cell: info => info.getValue(),
+    header: () => "A",
+  },
+  {
+    id:"passes",
+    accessorFn: (row) => row.passes,
+    cell: info => info.getValue(),
+    header: () => "PC",
+  },
+  {
+    id:"yellowcards",
+    accessorFn: (row) => row.yellowcards,
+    cell: info => info.getValue(),
+    header: () => "YC",
+  },
+  {
+    id:"redcards",
+    accessorFn: (row) => row.redcards,
+    cell: info => info.getValue(),
+    header: () => "RC",
+  }
+];
+export const TrophyStatsColumns: ColumnDef<any>[] = [
+  {
+    id:"tournamentName",
+    accessorFn: (row) => row.tournamentName,
+    cell: info => info.getValue(),
+    header: () => "Torneo",
+  },
+  {
+    id:"total",
+    accessorFn: (row) => row.total,
+    cell: info => info.getValue(),
+    header: () => "Total",
+  }
+];

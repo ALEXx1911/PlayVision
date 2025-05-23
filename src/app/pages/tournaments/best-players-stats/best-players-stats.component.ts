@@ -1,7 +1,7 @@
 import { Component, input, signal } from "@angular/core";
 import { ArrowUpCircle, LucideAngularModule } from "lucide-angular";
 import { SpecificStats } from "../../../components/shared/specific-stats/specific-stats.component";
-import { CentrocampistasColumns, GeneralStatsColumns, LeagueColumns, MaxGoleadoresColumns } from "../utils/column-headers";
+import { CentrocampistasColumns, GeneralStatsColumns, LeagueColumns, MaxGoleadoresColumns } from "../../utils/column-headers";
 import { GeneralContainer } from "../../../components/shared/component-container/container.component";
 
 const ELEMENT_DATA2= [

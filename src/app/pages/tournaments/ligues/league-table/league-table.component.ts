@@ -5,9 +5,9 @@ import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel} fr
 import { NgClass } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { ClubLeaguePosition } from "../../../../models/stats-interfaces";
-import { LeagueColumns } from "../../utils/column-headers";
+import { LeagueColumns } from "../../../utils/column-headers";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
-import { Icons } from "../../utils/icons";
+import { Icons } from "../../../utils/icons";
 
   const ELEMENT_DATA: ClubLeaguePosition[] = [
     {position: 1, name: 'FC Barcelona', points: 80, matchesplayed:30,win:25,draft:2,lose:4,goalfavor:102,goalagainst:30,goaldifference:"+70",lastmatches:"VLVVE"},

@@ -56,3 +56,40 @@ export interface ClubPlantilla{
     tackles: number;
     passes: number;
 }
+export interface PlayerData{
+    id: number;
+    name: string;
+    surname: string;
+    age: number;
+    height: number;
+    nationality: string;
+    shirtnumber: number;
+    position: string;
+    dominantfoot: string;
+}
+export interface PlayerStatsCurrentSeason{
+    tournament: string;
+    matchesplayed: number;
+    minutesplayed: number;
+    goals: number;
+    assists: number;
+    passes: number;
+    yellowcards: number;
+    redcards: number;
+    tackles: number;
+}
+export interface PlayerStatsCareer{
+    club: string;
+    season: string;
+    matchesplayed: number;
+    minutesplayed: number;
+    goals: number;
+    assists: number;
+    passes: number;
+    yellowcards: number;
+    redcards: number;
+}
+export interface TrophyStatsColumns{
+    tournamentName: string;
+    total: number;
+}

@@ -1,0 +1,17 @@
+<div class="w-45 relative mt-2 bg-custom-gray flex items-center gap-2.5 {{overlayOpen() ? 'rounded-t-lg' : 'rounded-2xl'}}"
+    cdkOverlayOrigin #overlayPosition="cdkOverlayOrigin">
+    <button mat-icon-button>
+        <mat-icon class="text-1xl">search</mat-icon>
+    </button>
+    <input #searchInput [value]="searchTerm()" placeholder="{{searchType() ? 'Jugador':'Club'}}" type="text" class="text-1xl w-20 outline-0 bg-inherit "
+        (click)="overlayOpen.set(true)" (keydown.ENTER)="search(searchInput.value)" />
+        @if (searchTerm()) {
+            <button mat-icon-button (click)="clearSearch()">
+                <mat-icon class="absolute top-0 right-0">close</mat-icon>
+            </button>
+        }    
+</div>
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOpen]="overlayOpen()"
+    [cdkConnectedOverlayOrigin]="overlayPosition" (overlayOutsideClick)="overlayOpen.set(false)">
+        <search-overlay/>
+</ng-template>

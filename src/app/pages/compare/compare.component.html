@@ -1,1 +1,27 @@
-<p>compare works!</p>
+<div class="w-full h-fit my-2.5">
+    <div class="w-full h-[15rem] p-1.5 flex flex-col items-center gap-1 [background:linear-gradient(0deg,rgba(81,49,243,1)_10%,rgba(0,0,0,1)_90%)]">
+        <p class="font-bold text-white">COMPARAR</p>
+        <div class="text-white border-1 border-main w-[160px] bg-black flex rounded-2xl mt-2">
+            <button class="w-full p-1 rounded-2xl text-xs font-bold" [class.bg-main]="showComparePlayer() === true" [class.bg-black]="showComparePlayer() !== true" (click)="changeCompareView(true)">Jugadores</button>
+            <button class="w-full p-1 rounded-2xl text-xs font-bold" [class.bg-main]="showComparePlayer() === false" [class.bg-black]="showComparePlayer() !== false" (click)="changeCompareView(false)">Equipos</button>
+        </div>
+        <div class="flex w-full h-fit items-center justify-center gap-2 mb-2">
+            
+            <searchbar [searchType]="showComparePlayer()"/>
+            <p class="text-white font-bold text-3xl">-</p>
+            <searchbar [searchType]="showComparePlayer()"/>
+        </div>
+        <mat-form-field>
+            <mat-label>Temporada</mat-label>
+            <mat-select>
+                @for (item of temporada(); track $index) {
+                    <mat-option [value]="item">{{item}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <button type="submit" class="bg-white rounded-2xl text-center w-[80px] border-1 text-xs font-bold p-0.5  hover:bg-white hover:text-main">Comparar</button>
+    </div>
+</div>
+<container [title]="'Comparar'" [isCollapsable]="false" [isCollapsed]="false">
+    <compare-data/>
+</container>

@@ -2,7 +2,7 @@
     <p class="col-start-2 col-end-3 text-xs">{{partido().status}}</p>
     <p class="col-start-2 col-end-3 text-sm row-start-2">{{partido().score}}</p>
     <img src="{{partido().teamALogo}}" class="w-[40px] col-start-3" alt="logo">
-    <p class="col-start-1 col-end-2 text-sm row-start-3">{{partido().teamA}}</p>
+    <a [routerLink]="'/club/1/partidosClub'" class="col-start-1 col-end-2 text-sm row-start-3">{{partido().teamA}}</a>
     <img src="{{partido().teamBLogo}}" class="w-[40px] col-start-1" alt="logo">
-    <p class="col-start-3 col-end-4 text-sm row-start-3">{{partido().teamA}}</p>
+    <a [routerLink]="'/club/1/partidosClub'" class="col-start-3 col-end-4 text-sm row-start-3">{{partido().teamA}}</a>
 </div>

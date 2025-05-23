@@ -1,9 +1,9 @@
 import { Component, input, signal } from "@angular/core";
 import { LucideAngularModule } from "lucide-angular";
 import { SpecificStats } from "../../../components/shared/specific-stats/specific-stats.component";
-import { CentrocampistasColumns, GeneralStatsColumns, LeagueColumns, MaxGoleadoresColumns } from "../utils/column-headers";
+import { CentrocampistasColumns, GeneralStatsColumns, LeagueColumns, MaxGoleadoresColumns } from "../../utils/column-headers";
 import {CdkAccordionModule} from '@angular/cdk/accordion';
-import { Icons } from "../utils/icons";
+import { Icons } from "../../utils/icons";
 import { GeneralContainer } from "../../../components/shared/component-container/container.component";
 
 const ELEMENT_DATA2= [

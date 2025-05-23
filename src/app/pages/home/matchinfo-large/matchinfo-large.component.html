@@ -1,13 +1,13 @@
 <div class="w-full h-fit border-2 border-main grid grid-cols-[1fr,auto,1fr] grid-rows-[auto,auto] rounded-2xl font-bold">
     <span class="col-start-2 row-start-1 text-main">{{matchInfo().time}}</span>
     <div class="col-start-1 row-start-2 flex w-full justify-start content-center">
-        <lucide-angular [img]="downArrow"/>
+        <lucide-angular [img]="downArrow" class="fill-black" color="#ffffffff"/>
         <img class="w-[50px] h-[50px]" src="{{matchInfo().homeTeamLogo}}" alt="logo1">
         <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().homeTeam}}</a>
     </div>
     <span class="col-start-2 row-start-2 w-fit">{{matchInfo().score}}</span>
     <div class="col-start-3 row-start-2 flex w-full justify-end">
-        <span class="text-sm">{{matchInfo().awayTeam}}</span>
+        <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().awayTeam}}</a>
         <img class="w-[50px] h-[50px]" src="{{matchInfo().awayTeamLogo}}" alt="logo2">
         <lucide-angular [img]="chartIcon"/>
     </div>
