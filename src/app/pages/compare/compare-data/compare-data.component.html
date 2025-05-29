@@ -53,20 +53,13 @@
     </div>
     <div class="w-full flex flex-col gap-2 p-2">
         <div class="flex gap-2">
-            <container [title]="'Clubes'" class="w-full">
-                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
-            </container>
-            <container [title]="'Clubes'" class="w-full">
-                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
-            </container>
+            <palmares [tableTitle]="'Clubes'" [palmares]="palmares()" class="w-full"/>
+            <palmares [tableTitle]="'Clubes'" [palmares]="palmares()" class="w-full"/>
+            
         </div>
         <div class="flex gap-2">
-            <container [title]="'Selección'" class="w-full">
-                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
-            </container>
-            <container [title]="'Selección'" class="w-full">
-                <specific-stats [defaultColumns]="trophyColumns" [data]="palmares()" [title]="''"/>
-            </container>
+            <palmares [tableTitle]="'Selección'" [palmares]="palmares()" class="w-full"/>
+            <palmares [tableTitle]="'Selección'" [palmares]="palmares()" class="w-full"/>           
         </div>
     </div>
 </div>

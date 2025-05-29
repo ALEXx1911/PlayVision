@@ -5,8 +5,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'club',
   imports: [Navbar,RouterOutlet],
-  templateUrl: './club.component.html',
-  styleUrl: './club.component.css'
+  templateUrl: './club.component.html'
 })
 export default class ClubComponent {
   readonly navOptions = signal([
@@ -23,8 +22,8 @@ export default class ClubComponent {
       route:"palmares"
     },
     {
-      label:"Historicos",
-      route:"historicos"
+      label:"Competiciones",
+      route:"competiciones"
     },
   ]);
 }

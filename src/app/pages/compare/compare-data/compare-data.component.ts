@@ -1,13 +1,12 @@
 import { Component, signal } from "@angular/core";
 import { Icons } from "../../utils/icons";
 import { LucideAngularModule, Trophy } from "lucide-angular";
-import { GeneralContainer } from "../../../components/shared/component-container/container.component";
-import { SpecificStats } from "../../../components/shared/specific-stats/specific-stats.component";
 import { TrophyStatsColumns } from "../../utils/column-headers";
+import { PalmaresComponent } from "../../../components/shared/palmares/palmares.component";
 
 @Component({
   selector: "compare-data",
-  imports: [LucideAngularModule, GeneralContainer, SpecificStats],
+  imports: [LucideAngularModule, PalmaresComponent],
   templateUrl: "./compare-data.component.html",
 })
 export class CompareDataComponent {

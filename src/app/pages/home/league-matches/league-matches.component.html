@@ -1,6 +1,6 @@
-<container [canSave]="true" [isCollapsable]="true" [isCollapsed]="false" [title]="'La liga'" [hasFlag]="true">
+<container [canSave]="canSave()" [isCollapsable]="true" [isCollapsed]="isCollapsed()" [title]="titleContainer()" [hasFlag]="hashFlag()">
     <div class="flex flex-col gap-3 p-2">
-        @for (match of matches; track match.id) {
+        @for (match of tournamentMatches(); track match.id) {
             <matchinfo-large [matchInfo]="match"/>
         }
     </div>

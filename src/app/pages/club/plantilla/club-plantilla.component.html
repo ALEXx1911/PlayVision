@@ -3,6 +3,5 @@
     <container [title]="'Todos los jugadores'" [isCollapsable]="true" [isCollapsed]="false">
         <specific-stats [defaultColumns]="columns" [data]="plantilla()" [title]="''"/>
     </container>
-    <best-player-stats [playerStatsTitle]="'Jugadores relevantes'"/>
-    <bestXI/>
+    <bestXI [titleContainer]="'XI inicial'" [isClubXI]="true"/>
 </div>

@@ -7,7 +7,7 @@ import { BestXI } from "../../../components/shared/bestXI/bestXI.component";
 
 @Component({
   selector: "club-plantilla",
-  imports: [GeneralContainer, SpecificStats, BestPlayersStats, BestXI],
+  imports: [GeneralContainer, SpecificStats, BestXI],
   templateUrl: "./club-plantilla.component.html",
 })
 export default class ClubPlantillaComponent {

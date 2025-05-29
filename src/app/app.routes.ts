@@ -23,11 +23,11 @@ export const routes: Routes = [
             },
             {
                 path: "palmares",
-                loadComponent: () => import("./pages/club/palmares/club-palmares.component").then(m => m.default),
+                loadComponent: () => import("./pages/club/club-palmares/club-palmares.component").then(m => m.default),
             },
             {
-                path: "historicos",
-                loadComponent: () => import("./pages/club/historicos/club-historicos.component").then(m => m.default),
+                path: "competiciones",
+                loadComponent: () => import("./pages/club/club-competiciones/club-competitions.component").then(m => m.default),
             }
         ]
     },

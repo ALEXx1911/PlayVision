@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
 import { Icons } from "../../../pages/utils/icons";
 import { LucideAngularModule } from "lucide-angular";
 import { CdkAccordion, CdkAccordionItem } from "@angular/cdk/accordion";
@@ -14,4 +14,7 @@ import { GeneralContainer } from "../component-container/container.component";
 export class BestXI{
     uparrow = Icons.arrowUpCircle;
     downarrow = Icons.arrowDownCircle;
+    readonly titleContainer = input<string>("");
+    readonly isCollapsed = input<boolean>(false);
+    readonly isClubXI = input<boolean>(false);
 }

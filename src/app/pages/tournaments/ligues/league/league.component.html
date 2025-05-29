@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-y-2">
-    <p class="text-center">Temporada 2025/2026</p>
+    <p class="text-center mt-2 font-bold">Temporada <span class="text-main">2025/2026</span></p>
     <league-table [isCollapsed]="false"/>
     <best-player-stats [playerStatsTitle]="title1()"/>
     <best-clubs-stats [clubStatsTitle]="title2()"/>
-    <bestXI/>
+    <bestXI [titleContainer]="'Best La liga XI'" [isClubXI]="false"/>
 </div>
