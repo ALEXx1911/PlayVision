@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { GeneralContainer } from "../../components/shared/component-container/container.component";
 import { SpecificStats } from "../../components/shared/specific-stats/specific-stats.component";
-import { PlayerStatsCareerColumns, PlayerStatsCurrentSeasonColumns } from '../utils/column-headers';
+import { PlayerStatsCareerColumns, PlayerStatsCurrentSeasonColumns} from '../utils/column-headers';
+import { PlayerChartComponent } from "../../components/shared/charts/playerChart/playerChart.component";
+import { PalmaresComponent } from "../../components/shared/palmares/palmares.component";
 
 @Component({
   selector: 'app-player',
-  imports: [GeneralContainer, SpecificStats],
+  imports: [GeneralContainer, SpecificStats, PlayerChartComponent, PalmaresComponent],
   templateUrl: './player.component.html',
   styleUrl: './player.component.css'
 })
@@ -39,4 +41,28 @@ export default class PlayerComponent {
       tackles: 5,
     }
   ]);
+  readonly playerStats = [
+        { name: "PJ", value: 50 },
+        { name: "Min", value: 40 },
+        { name: "Goles", value: 20 },
+        { name: "Asistencias", value: 10 },
+        { name: "%Pases", value: 30 },
+        { name: "Tackles", value: 15 },
+        { name: "TA", value: 5 },
+        { name: "TR", value: 2 },
+    ];
+    readonly palmares = signal([
+        {
+            tournamentName: "Liga",
+            total: 10,
+        },
+        {
+            tournamentName: "Champions",
+            total: 4,
+        },
+        {
+            tournamentName: "Mundial",
+            total: 1,
+        },
+      ]);
 }

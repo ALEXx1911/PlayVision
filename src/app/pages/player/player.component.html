@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-4 px-1">
-    <div class="w-full text-white mt-2.5 h-[fit] rounded-[1px] overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
+    <div class="w-full text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
     grid grid-cols-2-[auto-2fr] grid-rows-2- gap-y-2 text-sm p-2">
         <div class="w-full h-full flex justify-center items-center col-start-1 col-end-2 row-start-1 row-end-3">
             <img src="escudo1.png" alt="Escudo" class="w-16 h-16"/>
@@ -32,11 +32,14 @@
         <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
     </container>
     <container [title]="'Trayectoria'" [isCollapsable]="true" [isCollapsed]="false">
-        <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
-    </container>
-    <container [title]="'Selección'" [isCollapsable]="true" [isCollapsed]="false">
         <specific-stats [defaultColumns]="careerColumns" [data]="data2()" [title]="''"/>
     </container>
-    <container [title]="'Gráfico Estadísticas'" [isCollapsable]="true" [isCollapsed]="true">
+    <container [title]="'Selección'" [isCollapsable]="true" [isCollapsed]="false">
+        <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
     </container>
+    <container [title]="'Gráfico Estadísticas'" [isCollapsable]="true" [isCollapsed]="true">
+        <player-chart [chartData]="playerStats"/>
+    </container>
+    <palmares [palmares]="palmares()" [tableTitle]="'Palmarés'"/>
+    
 </div>

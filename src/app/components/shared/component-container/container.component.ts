@@ -1,6 +1,6 @@
 import { CdkAccordion, CdkAccordionItem } from "@angular/cdk/accordion";
 import { AfterViewInit, Component, computed, effect, input, signal, ViewChild } from "@angular/core";
-import { LucideAngularModule } from "lucide-angular";
+import { LucideAngularModule, LucideIconData } from "lucide-angular";
 import { Icons } from "../../../pages/utils/icons";
 import { sign } from "crypto";
 
@@ -17,6 +17,7 @@ export class GeneralContainer implements AfterViewInit {
     readonly centeredTitle = input<boolean>();
     readonly canSave = input<boolean>();
     readonly hasFlag = input<boolean>();
+    readonly iconTitle = input<LucideIconData>();
     uparrow = Icons.arrowUpCircle;
     downarrow = Icons.arrowDownCircle;
     bookmark = Icons.bookMark;

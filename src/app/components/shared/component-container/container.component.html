@@ -1,15 +1,17 @@
-<div class="flex flex-col w-full h-fit overflow-hidden border-2 border-black rounded-xs items-center">
+<div class="flex flex-col w-full h-fit overflow-hidden  border-2 border-black rounded-md items-center">
     <cdk-accordion class="w-full h-fit">
         <cdk-accordion-item #item="cdkAccordionItem" class="w-full h-fit">
             <div class="w-full h-[32px] px-1 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%">
-                <div class="flex items-center">
+                <div class="flex items-center ">
                     @if (hasFlag()) {
                         <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
                     }
-                    <span class="font-bold text-white text-sm text-center">{{title()}}</span>
+                    <span class="font-bold text-white text-sm text-center mr-1">{{title()}}</span>
                     @if (canSave()) {<button (click)="save()">
                         <lucide-angular [img]="bookmark" class="fill-white"/>
-                    </button>}
+                    </button>}@else if (iconTitle()) {
+                        <lucide-angular [img]="iconTitle()" class="fill-white"/>
+                    }
                 </div>
                   @if (isCollapsable()) {
                       <button (click)="item.toggle()" [attr.aria-expanded]="item.expanded" [attr.id]="1"

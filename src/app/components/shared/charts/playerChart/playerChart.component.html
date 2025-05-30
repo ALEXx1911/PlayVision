@@ -1,0 +1,13 @@
+@if (isBrowserRendered) {
+        <ngx-charts-bar-horizontal
+        [view]="viewSize()"
+        [results]="chartData()"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [roundEdges]="roundEdges"
+        [showGridLines]="showGridLines"
+        [xScaleMax]="xScaleMax"
+        [showDataLabel]="showDataLabels">
+        </ngx-charts-bar-horizontal>
+}
