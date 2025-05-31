@@ -8,8 +8,7 @@ import { PalmaresComponent } from "../../components/shared/palmares/palmares.com
 @Component({
   selector: 'app-player',
   imports: [GeneralContainer, SpecificStats, PlayerChartComponent, PalmaresComponent],
-  templateUrl: './player.component.html',
-  styleUrl: './player.component.css'
+  templateUrl: './player.component.html'
 })
 export default class PlayerComponent {
   readonly tempActualColumns = PlayerStatsCurrentSeasonColumns;

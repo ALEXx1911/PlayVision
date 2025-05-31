@@ -6,304 +6,309 @@
  html {
     box-sizing: border-box;
  }
+
+ .jugador{
+   overflow: visible;
+  }
+  .jugador::after {
+       content: attr(data-name);
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       pointer-events: none;
+       z-index: 30;
+     }
+ /* Alineacion para 4-3-3*/ 
  
- *,
- *:before,
- *:after {
-    box-sizing: inherit;
- }
- 
- body {
-    background: #0f0c29;
-    background: radial-gradient(rgba(48, 48, 87, 0.8), rgba(40, 35, 87, 1), rgba(2, 1, 13, 1));
- }
- 
- :root {
-    --ancho-lineas: 3px;
- }
- 
- #escenario {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+ .alineacion1{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(5,1fr);
+   justify-items: center;
     align-items: center;
+   grid-template-areas:
+   ". . . . j9 ."
+   ". j2 . j7 . ."
+   "j1 j3 j6 . . j11"
+   ". j4 . j8 . ."
+   ". j5 . . j10 .";
+   width: 100%;
  }
- 
- #contenedor-responsive {
-    position: relative;
-    width: 75%;
-    transition: all 1s ease;
+
+  .jalineacion1-1{ 
+    grid-area: j1;
+  }
+   .jalineacion1-2{ 
+    grid-area: j2;
+    transform: translateY(-50px);
+  }
+  .jalineacion1-3{ 
+    grid-area: j3;
+    transform: translateY(-40px);
+  }
+  .jalineacion1-4{ 
+    grid-area: j4;
+    transform: translateY(-20px);
+  }
+  .jalineacion1-5{ 
+    grid-area: j5;
+    transform: translateY(-10px);
+  }
+  .jalineacion1-6{ 
+    grid-area: j6;
+  }
+  .jalineacion1-7{ 
+    grid-area: j7;
+  }
+  .jalineacion1-8{ 
+    grid-area: j8;
+  }
+  .jalineacion1-9{ 
+    grid-area: j9;
+  }
+  .jalineacion1-10{ 
+    grid-area: j10;
+  }
+  .jalineacion1-11{ 
+    grid-area: j11;
+    transform: translateX(-20px);
+  }
+  /* Alineacion para 4-4-2*/
+  .alineacion2{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(5,1fr);
+   justify-items: center;
+    align-items: center;
+   grid-template-areas:
+   ". . . . . ."
+   ". j2 j7 . j10 ."
+   "j1 j3 j6 . . ."
+   ". j4 j8 . j11 ."
+   ". j5 j9 . . .";
+   width: 100%;
  }
- 
- #contenedor-responsive::before {
-    content: "";
-    display: block;
-    padding-top: 56.25%;
+
+  .jalineacion2-1{ 
+    grid-area: j1;
+  }
+   .jalineacion2-2{ 
+    grid-area: j2;
+    transform: translateY(-50px);
+  }
+  .jalineacion2-3{ 
+    grid-area: j3;
+    transform: translateY(-40px);
+  }
+  .jalineacion2-4{ 
+    grid-area: j4;
+    transform: translateY(-20px);
+  }
+  .jalineacion2-5{ 
+    grid-area: j5;
+    transform: translateY(-10px);
+  }
+  .jalineacion2-6{ 
+    grid-area: j6;
+    transform: translateY(-40px) translateX(25px);
+  }
+  .jalineacion2-7{ 
+    grid-area: j7;
+    transform: translateY(-50px) translateX(25px);
+  }
+  .jalineacion2-8{ 
+    grid-area: j8;
+    transform: translateY(-20px) translateX(25px);
+  }
+  .jalineacion2-9{ 
+    grid-area: j9;
+    transform: translateY(-10px) translateX(25px);
+  }
+  .jalineacion2-10{ 
+    grid-area: j10;
+  }
+  .jalineacion2-11{ 
+    grid-area: j11;
+  }
+  
+  /* Alineacion para 4-2-3-1*/
+
+  .alineacion3{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(5,1fr);
+   justify-items: center;
+    align-items: center;
+   grid-template-areas:
+   ". . . j8 . ."
+   ". j2 . . . ."
+   "j1 j3 j6 j9 . j11"
+   ". j4 j7 . . ."
+   ". j5 . j10 . .";
+   width: 100%;
  }
- 
- .contenedor-campo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: green;
-    background-image: url("http://hugoganoza.com/gits/football-responsive-cssgrid/hierba.png");
-    background-size: 8px 8px;
-    border: var(--ancho-lineas) solid white;
-    overflow: hidden;
-    display: grid;
-    grid-gap: 0px;
-    grid-template-rows: 0.25fr 0.75fr 2fr 0.75fr 0.25fr;
-    grid-template-columns: 0.09fr 1fr var(--ancho-lineas) 1fr 0.09fr;
-    grid-template-areas: "esi . lvmcar . esd " ". . lvmcar . . " "zc zc zc zc zc " ". . lvmcab . . " "eii . lvmcab . eid ";
+
+  .jalineacion3-1{ 
+    grid-area: j1;
+    transform: translateY(10px);
+  }
+   .jalineacion3-2{ 
+    grid-area: j2;
+    transform: translateY(-50px);
+  }
+  .jalineacion3-3{ 
+    grid-area: j3;
+    transform: translateY(-40px);
+  }
+  .jalineacion3-4{ 
+    grid-area: j4;
+    transform: translateY(-20px);
+  }
+  .jalineacion3-5{ 
+    grid-area: j5;
+    transform: translateY(-10px);
+  }
+  .jalineacion3-6{ 
+    grid-area: j6;
+    transform: translateY(-30px) translateX(10px);
+  }
+  .jalineacion3-7{ 
+    grid-area: j7;
+    transform: translateY(-20px) translateX(10px);
+  }
+  .jalineacion3-8{ 
+    grid-area: j8;
+    transform: translateX(20px);
+  }
+  .jalineacion3-9{ 
+    grid-area: j9;
+    transform: translateX(20px);
+  }
+  .jalineacion3-10{ 
+    grid-area: j10;
+    transform: translateX(20px);
+  }
+  .jalineacion3-11{ 
+    grid-area: j11;
+    transform: translateX(-20px);
+  }
+  
+  /* Alineacion para 3-5-2*/
+
+  .alineacion4{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(5,1fr);
+   justify-items: center;
+    align-items: center;
+   grid-template-areas:
+   ". . . j9 . ."
+   ". j2 . j7 j10 ."
+   "j1 j3 j6 . . ."
+   ". j4 . j8 j11 ."
+   ". . . j5 . .";
+   width: 100%;
  }
- 
- /* Propiedades comunes a los corners */
- #esquina-superior-izquierda,
- #esquina-superior-derecha,
- #esquina-inferior-izquierda,
- #esquina-inferior-derecha {
-    position: relative;
-    overflow: hidden;
+
+  .jalineacion4-1{ 
+    grid-area: j1;
+  }
+   .jalineacion4-2{ 
+    grid-area: j2;
+    transform: translateY(-5px);
+  }
+  .jalineacion4-3{ 
+    grid-area: j3;
+  }
+  .jalineacion4-4{ 
+    grid-area: j4;
+    transform: translateY(5px);
+  }
+  .jalineacion4-5{ 
+    grid-area: j5;
+    transform: translateY(-10px) translateX(-5px);
+  }
+  .jalineacion4-6{ 
+    grid-area: j6;
+    transform: translateX(-5px);
+  }
+  .jalineacion4-7{ 
+    grid-area: j7;
+    transform: translateX(-40px) translateY(-5px);
+  }
+  .jalineacion4-8{ 
+    grid-area: j8;
+    transform: translateX(-40px) translateY(5px);
+  }
+  .jalineacion4-9{ 
+    grid-area: j9;
+    transform: translateX(-5px)
+  }
+  .jalineacion4-10{ 
+    grid-area: j10;
+  }
+  .jalineacion4-11{ 
+    grid-area: j11;
+  }
+  /* Alineacion para 5-3-2*/
+
+  .alineacion5{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-template-rows: repeat(5,1fr);
+   justify-items: center;
+    align-items: center;
+   grid-template-areas:
+   ". j2 . . . ."
+   ". j3 . j9 j10 ."
+   "j1 j4 j7 . . ."
+   ". j5 . j8 j11 ."
+   ". j6 . . . .";
+   width: 100%;
  }
- 
- #esquina-superior-izquierda::after,
- #esquina-superior-derecha::after,
- #esquina-inferior-izquierda::after,
- #esquina-inferior-derecha::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: "";
-    border: var(--ancho-lineas) solid white;
-    border-radius: 50%;
- }
- 
- /* Propiedades especificas de los corners */
- #esquina-superior-izquierda {
-    grid-area: esi;
- }
- 
- #esquina-superior-izquierda:after {
-    top: -50%;
-    left: -50%;
- }
- 
- #esquina-superior-derecha {
-    grid-area: esd;
- }
- 
- #esquina-superior-derecha:after {
-    top: -50%;
-    left: 50%;
- }
- 
- #esquina-inferior-izquierda {
-    grid-area: eii;
- }
- 
- #esquina-inferior-izquierda:after {
-    top: 50%;
-    left: -50%;
- }
- 
- #esquina-inferior-derecha {
-    grid-area: eid;
- }
- 
- #esquina-inferior-derecha:after {
-    top: 50%;
-    left: 50%;
- }
- 
- #linea-vertical-medio-campo-arriba {
-    background: white;
-    grid-area: lvmcar;
- }
- 
- #linea-vertical-medio-campo-abajo {
-    background: white;
-    grid-area: lvmcab;
- }
- 
- /* La zona central */
- #zona-central {
-    grid-area: zc;
-    display: grid;
-    grid-gap: 0px;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(12, 1fr) var(--ancho-lineas) repeat(12, 1fr);
- }
- 
- #area-grande-izquierda {
-    background-color: green;
-    background-image: url("http://hugoganoza.com/gits/football-responsive-cssgrid/hierba.png");
-    background-size: 8px 8px;
-    border-top: var(--ancho-lineas) solid white;
-    border-right: var(--ancho-lineas) solid white;
-    border-bottom: var(--ancho-lineas) solid white;
-    z-index: 20;
-    grid-area: 1 / 1 / span 20 / span 4;
- }
- 
- #area-pequena-izquierda {
-    border-top: var(--ancho-lineas) solid white;
-    border-right: var(--ancho-lineas) solid white;
-    border-bottom: var(--ancho-lineas) solid white;
-    z-index: 40;
-    grid-area: 5 / 1 / span 12 / span 2;
- }
- 
- #penalty-izquierda {
-    position: relative;
-    left: calc(0% - calc(var(--ancho-lineas) + 4px));
-    width: calc(var(--ancho-lineas));
-    height: calc(var(--ancho-lineas));
-    background: white;
-    border-radius: 50%;
-    z-index: 30;
-    grid-area: 11 / 4 / span 1 / span 1;
- }
- 
- #semicirculo-izquierda {
-    border: var(--ancho-lineas) solid white;
-    border-radius: 50%;
-    z-index: 10;
-    grid-area: 6 / 3 / span 10 / span 3;
- }
- 
- #linea-vertical-medio-campo-medio {
-    position: relative;
-    background: white;
-    grid-area: 1 / 13 / span 20 / span 1;
- }
- 
- #linea-vertical-medio-campo-medio::after {
-    position: absolute;
-    top: calc(50% - 3px);
-    left: -3px;
-    width: calc(var(--ancho-lineas) + 6px);
-    height: calc(var(--ancho-lineas) + 6px);
-    content: "";
-    background: white;
-    border-radius: 50%;
- }
- 
- #circulo-central {
-    border: var(--ancho-lineas) solid white;
-    border-radius: 50%;
-    z-index: 50;
-    grid-area: 5 / 11 / span 12 / span 5;
- }
- 
- #area-grande-derecha {
-    background-color: green;
-    background-image: url("http://hugoganoza.com/gits/football-responsive-cssgrid/hierba.png");
-    background-size: 8px 8px;
-    border-top: var(--ancho-lineas) solid white;
-    border-left: var(--ancho-lineas) solid white;
-    border-bottom: var(--ancho-lineas) solid white;
-    z-index: 20;
-    grid-area: 1 / 22 / span 20 / span 4;
- }
- 
- #area-pequena-derecha {
-    border-top: var(--ancho-lineas) solid white;
-    border-left: var(--ancho-lineas) solid white;
-    border-bottom: var(--ancho-lineas) solid white;
-    z-index: 40;
-    grid-area: 5 / 24 / span 12 / span 2;
- }
- 
- #penalty-derecha {
-    position: relative;
-    left: calc(var(--ancho-lineas) + 4px);
-    width: calc(var(--ancho-lineas));
-    height: calc(var(--ancho-lineas));
-    background: white;
-    border-radius: 50%;
-    z-index: 30;
-    grid-area: 11 / 23 / span 1 / span 1;
- }
- 
- #semicirculo-derecha {
-    border: var(--ancho-lineas) solid white;
-    border-radius: 50%;
-    z-index: 10;
-    grid-area: 6 / 21 / span 10 / span 3;
- }
- 
- 
- /* Conmutador */
- #conmutador-input {
-    display: none;
- }
- 
- #conmutador-label {
-    opacity: 0.85;
- }
- 
- #conmutador-label {
-    position: fixed;
-    top: 50px;
-    right: -10px;
-    width: 110px;
-    height: 50px;
-    display: block;
-    background: white;
-    border-top-left-radius: 15% 50%;
-    border-bottom-left-radius: 15% 50%;
-    border-top-right-radius: 15% 50%;
-    border-bottom-right-radius: 15% 50%;
-    box-shadow: inset 0 0 0 23px rgba(50, 205, 50, 0.7);
-    font: bold 16px Arial, sans-serif;
-    cursor: pointer;
-    transform: rotate(90deg);
-    transition: all 05.s linear;
- }
- 
- #conmutador-label::before {
-    position: absolute;
-    top: 5px;
-    left: 8px;
-    display: block;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid grey;
-    border-radius: 50%;
-    content: "2D";
-    transform: rotate(-90deg);
-    transition: transform 0.5s linear;
- }
- 
- #conmutador-input:checked~#contenedor-responsive {
-    width: 55%;
-    transform: rotateX(45deg) rotateY(0deg) rotateZ(45deg);
- }
- 
- #conmutador-input:checked+#conmutador-label {
-    box-shadow: inset 0px 0px 0px 23px rgba(50, 205, 50, 0.7);
- }
- 
- #conmutador-input:checked+#conmutador-label::before {
-    content: "3D";
-    background-color: white;
-    transform: translateX(50px) rotate(-90deg);
- }
- 
- /* Media queries */
- @media only screen and (max-width: 768px) {
-    :root {
-        --ancho-lineas: 2px;
-    }
- }
- 
- @media only screen and (max-width: 480px) {
-    :root {
-        --ancho-lineas: 1px;
-    }
- }
- 
- 
+
+  .jalineacion5-1{ 
+    grid-area: j1;
+    transform: translateY(10px);
+  }
+   .jalineacion5-2{ 
+    grid-area: j2;
+    transform: translateX(25px);
+  }
+  .jalineacion5-3{ 
+    grid-area: j3;
+  }
+  .jalineacion5-4{ 
+    grid-area: j4;
+  }
+  .jalineacion5-5{ 
+    grid-area: j5;
+  }
+  .jalineacion5-6{ 
+    grid-area: j6;
+    transform: translateX(25px);
+  }
+  .jalineacion5-7{ 
+    grid-area: j7;
+  }
+  .jalineacion5-8{ 
+    grid-area: j8;
+    transform: translateX(-10px);
+  }
+  .jalineacion5-9{ 
+    grid-area: j9;
+    transform: translateX(-10px);
+  }
+  .jalineacion5-10{ 
+    grid-area: j10;
+    transform: translateX(20px);
+  }
+  .jalineacion5-11{ 
+    grid-area: j11;
+    transform: translateX(20px);
+  }
