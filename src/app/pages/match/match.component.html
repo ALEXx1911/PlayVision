@@ -1,1 +1,37 @@
-<p>match works!</p>
+<p class="text-center font-bold mt-2">La Liga Jornada 20</p>
+<div class="flex flex-col gap-4 px-1">
+    <div class="w-full font-bold text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
+        flex text-sm p-2">
+        <div class="w-full h-full flex flex-col items-center">
+            <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+            <p class="text-xl">FC Barcelona</p>
+        </div>
+        <div class="w-full h-full flex flex-col items-center mt-2">
+            <p class="text-md">14/05/2025</p>
+            <p>21:00</p>
+            <p class="font-semibold">Spotify Camp Nou</p>
+        </div>
+        <div class="w-full h-full flex flex-col items-center">
+            <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+            <p class="text-xl">Newcastle</p>
+        </div>
+    </div>
+    <container [title]="'Posiciones en liga'" [isCollapsable]="true" [isCollapsed]="false">
+        <div class="flex flex-col w-full h-fit items-center gap-1">
+            <div class="flex items-center gap-2">
+                <span class="font-semibold">La Liga</span>
+                <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+            </div>
+        </div>
+        <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
+        <div class="flex flex-col w-full h-fit items-center gap-1">
+            <div class="flex items-center gap-2">
+                <span class="font-semibold">Premier League</span>
+                <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+            </div>
+        </div>
+        <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
+    </container>
+    <bestXI [isCollapsed]="false" [titleContainer]="'XI Inical'" [isClubXI]="false"/>
+    <league-matches [isCollapsed]="false" [titleContainer]="'Últimos 5 partidos'"/>
+</div>

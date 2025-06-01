@@ -18,7 +18,7 @@ export class BestXI{
     readonly titleContainer = input<string>("");
     readonly isCollapsed = input<boolean>(false);
     readonly isClubXI = input<boolean>(false);
-    readonly formationType = input<string>("5-3-2");
+    readonly formationType = input<string>("4-3-3");
     readonly formationCode = this.getFormationCode();
 
     readonly formationPlayers= [

@@ -48,7 +48,7 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/login/login.component").then(m => m.default),
     },
     {
-        path: "match",
+        path: "match/:matchId",
         loadComponent: () => import("./pages/match/match.component").then(m => m.default),
     },
     {

@@ -23,6 +23,8 @@ export class SpecificStats{
             return null;
     });
     
+    //Funcion para convertir el input de las columnas en  un array de ColumnDef
+    //Pues sin convertirlo, no se puede usar en la función createAngularTable 
     public intoArray(signal : InputSignal<any[]>){
         const res:ColumnDef<any>[]= signal().map(data => data); 
         return res;

@@ -9,6 +9,8 @@
     <div class="col-start-3 row-start-2 flex w-full justify-end">
         <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().awayTeam}}</a>
         <img class="w-[50px] h-[50px]" src="{{matchInfo().awayTeamLogo}}" alt="logo2">
-        <lucide-angular [img]="chartIcon"/>
+        <a [routerLink]="'/match/1/'">
+            <lucide-angular [img]="chartIcon"/>
+        </a>
     </div>
 </div>

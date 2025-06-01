@@ -6,7 +6,7 @@
                     @if (hasFlag()) {
                         <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
                     }
-                    <span class="font-bold text-white text-sm text-center mr-1">{{title()}}</span>
+                    <span class="font-bold text-white text-md text-center mr-1">{{title()}}</span>
                     @if (canSave()) {<button (click)="save()">
                         <lucide-angular [img]="bookmark" class="fill-white"/>
                     </button>}@else if (iconTitle()) {
