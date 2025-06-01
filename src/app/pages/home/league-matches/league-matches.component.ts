@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, input, signal } from "@angular/core";
 import { ArrowUpCircle, Bookmark, LucideAngularModule } from "lucide-angular";
 import MatchInfoLarge from "../matchinfo-large/matchinfo-large.component";
 import { GeneralContainer } from "../../../components/shared/component-container/container.component";
@@ -15,6 +15,8 @@ export class LeagueMatches{
     readonly isCollapsed = input<boolean>(false);
     readonly titleContainer = input<string>("");
     readonly hashFlag = input<boolean>(false);
+    readonly isMatchResume = input<boolean>(false);
+    readonly isHomeTeamSelected = signal<boolean>(true);
     
     displayedColumns: string[] = ['position', 'name', 'points', 'matchesplayed',"win",
         "draft","lose","goalfavor","goalagainst",
@@ -88,4 +90,8 @@ export class LeagueMatches{
         }
     ];
     readonly tournamentMatches= input<any[]>(this.matches);
+
+    changeTeamSelected(value:boolean){
+        this.isHomeTeamSelected.set(value);
+    };
 }

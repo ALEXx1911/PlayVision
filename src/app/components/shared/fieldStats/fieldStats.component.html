@@ -1,0 +1,53 @@
+    <div class="w-full h-fit flex flex-col items-center gap-2">
+        <div class="infoMatch">
+            <div class="flex flex-col items-center infoTeam1">
+                <img src="escudo1.png" alt="Escudo" class="escudo"/>
+                <p class="fontBold text-main">BAR</p>
+                <p class="fontBold">4-3-3</p>
+            </div>
+            <div class="buttons">
+                <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === true" [class.bg-black]="isHomeTeamSelected() !== true" (click)="changeTeamSelected(true)">Home Team</button>
+                <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === false" [class.bg-black]="isHomeTeamSelected() !== false" (click)="changeTeamSelected(false)">Away Team</button>
+            </div>
+            <div class="marcador">
+                <p>2</p><p>-</p><p>1</p>
+            </div>
+            <div class="flex flex-col items-center infoTeam2">
+                <img src="escudo1.png" alt="Escudo" class="escudo"/>
+                <p class="fontBold">BAR</p>
+                <p class="fontBold">4-3-3</p>
+            </div>
+        </div>
+        <div class="w-full h-[300px]">
+            <div class="border-4 border-white w-full h-full relative z-10 bg-green-500">
+                  <div class="middle absolute top-0 left-[calc(50%_-_1px)] h-full border-2 border-white"></div>
+                  <div class="middle-circle absolute w-[82px] h-[82px] border-4 border-white rounded-full top-[calc(50%_-_41px)] left-[calc(50%_-_41px)]"></div>
+            
+                  <div class="bow is-left absolute w-[79px] h-[79px] border-4 border-white rounded-full top-[calc(50%_-_39.5px)] left-0"></div>
+                  <div class="bow is-right absolute w-[79px] h-[79px] border-4 border-white rounded-full top-[calc(50%_-_39.5px)] right-0"></div>            
+                  <div class="penalty-area is-left absolute w-[68px] h-[164px] border-4 border-white bg-green-500 top-[calc(50%_-_82px)] left-[-3px]"></div>
+                  <div class="penalty-area is-right absolute w-[68px] h-[164px] border-4 border-white bg-green-500 top-[calc(50%_-_82px)] right-[-3px]"></div>
+            
+                  <div class="goal is-left absolute w-[27px] h-[110px] border-4 border-white top-[calc(50%_-_55px)] left-[-3px]">
+                    <div class="penalty absolute w-[2px] h-[2px] bg-white rounded-full top-[calc(50%_-_4px)] left-[-14px]"></div>
+                  </div>
+                  <div class="goal is-right absolute w-[27px] h-[110px] border-4 border-white top-[calc(50%_-_55px)] right-[-3px]">
+                    <div class="penalty absolute w-[2px] h-[2px] bg-white rounded-full top-[calc(50%_-_4px)] right-[-14px]"></div>
+                  </div>
+                  <div class="w-full h-full {{homeFormationCodeType}}">
+                    @for (playerItem of homeFormationPlayers(); track $index) {
+                      <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" [playerMedia]="playerItem.media" class="z-20 jugador j{{homeFormationCodeType}}-{{playerItem.id}}"/>
+                    }
+                  </div>
+            </div>
+        </div>
+        <div>
+            <p class="fontBold">Suplentes</p>
+            <div>
+                <p>A</p>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </div>

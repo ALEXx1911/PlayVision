@@ -2,7 +2,6 @@ import { CdkAccordion, CdkAccordionItem } from "@angular/cdk/accordion";
 import { AfterViewInit, Component, computed, effect, input, signal, ViewChild } from "@angular/core";
 import { LucideAngularModule, LucideIconData } from "lucide-angular";
 import { Icons } from "../../../pages/utils/icons";
-import { sign } from "crypto";
 
 @Component({
     selector: "container",

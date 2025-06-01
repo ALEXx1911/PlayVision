@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { LeagueTable } from "../league-table/league-table.component";
 import { BestPlayersStats } from "../../best-players-stats/best-players-stats.component";
 import { BestClubsStats } from '../../best-teams-stats/best-clubs-stats.component';
-import { BestXI } from "../../../../components/shared/bestXI/bestXI.component";
+import { BestXI } from "../../../../components/shared/alineationXI/bestXI.component";
 
 @Component({
   selector: 'app-league',

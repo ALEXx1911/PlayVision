@@ -1,9 +1,9 @@
-import { Component, input } from "@angular/core";
+import { Component, input, signal } from "@angular/core";
 import { Icons } from "../../../pages/utils/icons";
 import { LucideAngularModule } from "lucide-angular";
-import { CdkAccordion, CdkAccordionItem } from "@angular/cdk/accordion";
 import { GeneralContainer } from "../component-container/container.component";
 import { PlayerIconComponent } from "./playerIconComponent/playerIcon.component";
+import { getFormationCode } from "../../../pages/utils/utilidades";
 
 @Component({
     selector: "bestXI",
@@ -13,14 +13,16 @@ import { PlayerIconComponent } from "./playerIconComponent/playerIcon.component"
 
 })
 export class BestXI{
-    uparrow = Icons.arrowUpCircle;
-    downarrow = Icons.arrowDownCircle;
+    readonly uparrow = Icons.arrowUpCircle;
+    readonly downarrow = Icons.arrowDownCircle;
     readonly titleContainer = input<string>("");
     readonly isCollapsed = input<boolean>(false);
     readonly isClubXI = input<boolean>(false);
     readonly formationType = input<string>("4-3-3");
-    readonly formationCode = this.getFormationCode();
+    readonly formationCode = getFormationCode(this.formationType());
 
+    readonly isMatchXI = input<boolean>(false);
+    readonly isHomeTeamSelected = signal<boolean>(true);
     readonly formationPlayers= [
         { id: 1, name: "Pedri", media: 8.5},
         { id: 2, name: "Gavi", media: 8.0},
@@ -34,21 +36,8 @@ export class BestXI{
         { id: 10, name: "Ter Stegen", media: 8.1},
         { id: 11, name: "Christensen", media: 7.7},
     ];
-
-    getFormationCode(): string {
-        switch (this.formationType()) {
-            case "4-3-3":
-                return "alineacion1";
-            case "4-4-2":
-                return "alineacion2";
-            case "4-2-3-1":
-                return "alineacion3";
-            case "3-5-2":
-                return "alineacion4";
-            case "5-3-2":
-                return "alineacion5";
-            default:
-                return "alineacion1";
-        }
+    changeTeamSelected(value:boolean){
+        this.isHomeTeamSelected.set(value);
     };
+  
 }

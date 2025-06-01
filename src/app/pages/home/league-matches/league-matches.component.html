@@ -1,7 +1,15 @@
 <container [canSave]="canSave()" [isCollapsable]="true" [isCollapsed]="isCollapsed()" [title]="titleContainer()" [hasFlag]="hashFlag()">
-    <div class="flex flex-col gap-3 p-2">
-        @for (match of tournamentMatches(); track match.id) {
-            <matchinfo-large [matchInfo]="match"/>
+    <div class="flex flex-col items-center w-full">
+        @if (isMatchResume()) {
+          <div class="border-1 border-main w-[15rem] h-[1.8rem] flex rounded-2xl mt-2 text-white bg-black">
+                <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === true" [class.bg-black]="isHomeTeamSelected() !== true" (click)="changeTeamSelected(true)">Home Team</button>
+                <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === false" [class.bg-black]="isHomeTeamSelected() !== false" (click)="changeTeamSelected(false)">Away Team</button>
+          </div>
         }
+        <div class="flex flex-col gap-3 p-2 w-full">
+            @for (match of tournamentMatches(); track match.id) {
+                <matchinfo-large [matchInfo]="match"/>
+            }
+        </div>
     </div>
 </container>

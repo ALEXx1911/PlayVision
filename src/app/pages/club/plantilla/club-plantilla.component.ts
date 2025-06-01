@@ -3,7 +3,7 @@ import { GeneralContainer } from "../../../components/shared/component-container
 import { SpecificStats } from "../../../components/shared/specific-stats/specific-stats.component";
 import { ClubPlantillaColumns } from "../../utils/column-headers";
 import { BestPlayersStats } from "../../tournaments/best-players-stats/best-players-stats.component";
-import { BestXI } from "../../../components/shared/bestXI/bestXI.component";
+import { BestXI } from "../../../components/shared/alineationXI/bestXI.component";
 
 @Component({
   selector: "club-plantilla",

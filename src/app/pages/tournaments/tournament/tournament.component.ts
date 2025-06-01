@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { BestPlayersStats } from "../best-players-stats/best-players-stats.component";
-import { BestXI } from "../../../components/shared/bestXI/bestXI.component";
+import { BestXI } from "../../../components/shared/alineationXI/bestXI.component";
 
 @Component({
   selector: 'app-tournament',

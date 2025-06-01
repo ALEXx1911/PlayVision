@@ -1,6 +1,7 @@
 import { ColumnDef } from "@tanstack/angular-table";
 import { ClubLeaguePosition, ClubPlantilla, GeneralStats, MaxGoleadores, TopCentrocampistas, TournamentWinners } from "../../models/stats-interfaces";
 
+//Aqui se definen  las columnas de las tablas que se van a usar en las tablas de la app
 export const LeagueColumns: ColumnDef<ClubLeaguePosition>[] = [
     {
       id:"position",

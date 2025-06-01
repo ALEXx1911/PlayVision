@@ -1,37 +1,79 @@
 <p class="text-center font-bold mt-2">La Liga Jornada 20</p>
-<div class="flex flex-col gap-4 px-1">
-    <div class="w-full font-bold text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
-        flex text-sm p-2">
-        <div class="w-full h-full flex flex-col items-center">
-            <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
-            <p class="text-xl">FC Barcelona</p>
+@if (isMatchOngoing()) {
+    <div class="flex flex-col px-1">
+        <div class="w-full font-bold text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
+            flex text-sm p-2">
+            <div class="w-full h-full flex flex-col items-center">
+                <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+                <p class="text-xl">FC Barcelona</p>
+            </div>
+            <div class="w-full h-full flex flex-col items-center mt-1">
+                <p class="text-xl mb-1">36'</p>
+                <p class="text-2xl">2-1</p>
+            </div>
+            <div class="w-full h-full flex flex-col items-center">
+                <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+                <p class="text-xl">Newcastle</p>
+            </div>
         </div>
-        <div class="w-full h-full flex flex-col items-center mt-2">
-            <p class="text-md">14/05/2025</p>
-            <p>21:00</p>
-            <p class="font-semibold">Spotify Camp Nou</p>
+        <div class="w-full h-fit py-1 flex flex-col border-2 gap-1 border-main">
+            <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">L Yamal</p><p class="col-start-2 col-end-3">58'</p><p class="col-start-3 col-end-4"></p></div>
+            <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">L Yamal</p><p class="col-start-2 col-end-3">70'</p><p class="col-start-3 col-end-4"></p></div>
+            <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2"></p><p class="col-start-2 col-end-3">87'</p><p class="col-start-3 col-end-4">Isaak</p></div>
         </div>
-        <div class="w-full h-full flex flex-col items-center">
-            <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
-            <p class="text-xl">Newcastle</p>
-        </div>
+        <container class="mt-2" [title]="'Estadísticas'" [isCollapsed]="false"  [isCollapsable]="true">
+            <div class="w-full h-fit py-1 flex flex-col gap-1">
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">2</p><p class="col-start-2 col-end-3">Goles</p><p class="col-start-3 col-end-4">1</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">15</p><p class="col-start-2 col-end-3">Remates</p><p class="col-start-3 col-end-4">2</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">19</p><p class="col-start-2 col-end-3">Remates a Puerta</p><p class="col-start-3 col-end-4">1</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">11</p><p class="col-start-2 col-end-3">Corners</p><p class="col-start-3 col-end-4">4</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">63%</p><p class="col-start-2 col-end-3">Posesión</p><p class="col-start-3 col-end-4">37%</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">715</p><p class="col-start-2 col-end-3">Pases</p><p class="col-start-3 col-end-4">434</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">5</p><p class="col-start-2 col-end-3">Faltas</p><p class="col-start-3 col-end-4">7</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">0</p><p class="col-start-2 col-end-3">Tarjetas Amarillas</p><p class="col-start-3 col-end-4">0</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">0</p><p class="col-start-2 col-end-3">Tarjetas Rojas</p><p class="col-start-3 col-end-4">0</p></div>
+                <div class="w-full grid grid-cols-3 justify-items-center"><p class="col-start-1 col-end-2">5</p><p class="col-start-2 col-end-3">Offsides</p><p class="col-start-3 col-end-4">7</p></div>
+            </div>
+        </container>
+        <container [title]="'Alineaciones'" [isCollapsed]="false" [isCollapsable]="false">
+            <field-stats class="" [homeLineUpCode]="homeLineUpCode()" [homeFormationPlayers]="homeFormationPlayers"></field-stats>
+        </container>
     </div>
-    <container [title]="'Posiciones en liga'" [isCollapsable]="true" [isCollapsed]="false">
-        <div class="flex flex-col w-full h-fit items-center gap-1">
-            <div class="flex items-center gap-2">
-                <span class="font-semibold">La Liga</span>
-                <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+}@else {
+    <div class="flex flex-col gap-4 px-1">
+        <div class="w-full font-bold text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
+            flex text-sm p-2">
+            <div class="w-full h-full flex flex-col items-center">
+                <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+                <p class="text-xl">FC Barcelona</p>
+            </div>
+            <div class="w-full h-full flex flex-col items-center mt-2">
+                <p class="text-md">14/05/2025</p>
+                <p>21:00</p>
+                <p class="font-semibold">Spotify Camp Nou</p>
+            </div>
+            <div class="w-full h-full flex flex-col items-center">
+                <img src="escudo1.png" alt="Escudo" class="w-18 h-18"/>
+                <p class="text-xl">Newcastle</p>
             </div>
         </div>
-        <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
-        <div class="flex flex-col w-full h-fit items-center gap-1">
-            <div class="flex items-center gap-2">
-                <span class="font-semibold">Premier League</span>
-                <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+        <container [title]="'Posiciones en liga'" [isCollapsable]="true" [isCollapsed]="false">
+            <div class="flex flex-col w-full h-fit items-center gap-1">
+                <div class="flex items-center gap-2">
+                    <span class="font-semibold">La Liga</span>
+                    <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+                </div>
             </div>
-        </div>
-        <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
-    </container>
-    <bestXI [isCollapsed]="false" [titleContainer]="'XI Inical'" [isClubXI]="false"/>
-    <league-matches [isCollapsed]="false" [titleContainer]="'Últimos 5 partidos'"/>
-</div>
+            <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
+            <div class="flex flex-col w-full h-fit items-center gap-1">
+                <div class="flex items-center gap-2">
+                    <span class="font-semibold">Premier League</span>
+                    <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5"/>
+                </div>
+            </div>
+            <specific-stats [defaultColumns]="leagueColumns" [data]="matchData" [title]="''"/>
+        </container>
+        <bestXI [isCollapsed]="false" [titleContainer]="'XI Inical'" [isClubXI]="false" [isMatchXI]="true"/>
+        <league-matches [isMatchResume]="true" [isCollapsed]="false" [titleContainer]="'Últimos 5 partidos'"/>
+    </div>
+}

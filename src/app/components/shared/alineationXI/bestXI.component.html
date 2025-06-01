@@ -1,9 +1,16 @@
 <container [title]="titleContainer()" [isCollapsable]="true" [isCollapsed]="isCollapsed()">
-  <div class="field box-border w-full h-fit p-4 mx-10 my-auto shadow-2xl rounded-sm mt-2">  
-    @if (isClubXI()) {
-      <p class="text-center font-bold">Entrenador: <span class="text-main">Hansi Flick </span></p>          
+  <div class="flex flex-col gap-1 items-center h-[400px]">
+    <div class="mt-2"></div>
+    @if (isMatchXI()) {
+      <div class="border-1 border-main w-[15rem] h-[1.8rem] flex rounded-2xl mt-2 text-white bg-black">
+            <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === true" [class.bg-black]="isHomeTeamSelected() !== true" (click)="changeTeamSelected(true)">Home Team</button>
+            <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === false" [class.bg-black]="isHomeTeamSelected() !== false" (click)="changeTeamSelected(false)">Away Team</button>
+      </div>
     }
-    <p class="text-center font-bold">Alineación Formación: <span class="text-main"> 4-4-2</span></p>
+    @if (isClubXI()) {
+      <p class="font-bold mt-2">Entrenador: <span class="text-main">Hansi Flick </span></p>          
+    }
+    <p class="font-bold mt-5">Formación: <span class="text-main"> 4-4-2</span></p>
     <div class="box-border w-full h-[300px] shadow-xs rounded-sm
         bg-[repeating-linear-gradient(90deg, rgba(0,0,0,0) 0, rgba(0,0,0,0) 17px, rgba(0,0,0,0.2) 17px, rgba(0,0,0,0.2) 34px)]">
           <div class="border-4 border-white w-full h-full relative z-10 bg-green-500">
@@ -21,15 +28,15 @@
                   <div class="goal is-right absolute w-[27px] h-[110px] border-4 border-white top-[calc(50%_-_55px)] right-[-3px]">
                     <div class="penalty absolute w-[2px] h-[2px] bg-white rounded-full top-[calc(50%_-_4px)] right-[-14px]"></div>
                   </div>
-                  <div class="w-full h-full {{getFormationCode()}}">
+                  <div class="w-full h-full {{formationCode}}">
                     @for (playerItem of formationPlayers; track $index) {
-                      <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" [playerMedia]="playerItem.media" class="z-20 jugador j{{getFormationCode()}}-{{playerItem.id}}"/>
+                      <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" [playerMedia]="playerItem.media" class="z-20 jugador j{{formationCode}}-{{playerItem.id}}"/>
                     }
                   </div>
-            </div>
-      </div>
+          </div>
+    </div>
+      @if (isClubXI()) {
+        <p class="font-bold mt-2">Suplentes</p>
+      }
   </div>
-  @if (isClubXI()) {
-    <p class="font-bold mt-2">Suplentes</p>
-  }
 </container>
