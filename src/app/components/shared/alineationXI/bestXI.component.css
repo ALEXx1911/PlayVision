@@ -43,42 +43,97 @@
   .jalineacion1-1{ 
     grid-area: j1;
   }
+  .jalineacion1-1rotated{
+    grid-area: j1;
+    transform: scaleX(-1)
+  ;}
+
    .jalineacion1-2{ 
     grid-area: j2;
     transform: translateY(-50px);
   }
+  .jalineacion1-2rotated{
+    grid-area: j2;
+    transform: translateY(-50px) scaleX(-1)
+    ;}
+
   .jalineacion1-3{ 
     grid-area: j3;
     transform: translateY(-40px);
   }
+  .jalineacion1-3rotated{
+    grid-area: j3;
+    transform: translateY(-40px) scaleX(-1)
+    ;}
+  
   .jalineacion1-4{ 
     grid-area: j4;
     transform: translateY(-20px);
   }
+  .jalineacion1-4rotated{
+    grid-area: j4;
+    transform: translateY(-20px) scaleX(-1);
+  }
+  
   .jalineacion1-5{ 
     grid-area: j5;
     transform: translateY(-10px);
   }
+  .jalineacion1-5rotated{
+    grid-area: j5;
+    transform: translateY(-10px) scaleX(-1);
+  }
+  
   .jalineacion1-6{ 
     grid-area: j6;
   }
+  .jalineacion1-6rotated{
+    grid-area: j6;
+    transform: scaleX(-1);
+  }
+  
   .jalineacion1-7{ 
     grid-area: j7;
   }
+  .jalineacion1-7rotated{
+    grid-area: j7;
+    transform: scaleX(-1);
+  }
+  
   .jalineacion1-8{ 
     grid-area: j8;
   }
+  .jalineacion1-8rotated{
+    grid-area: j8;
+    transform: scaleX(-1);
+  }
+  
   .jalineacion1-9{ 
     grid-area: j9;
   }
+  .jalineacion1-9rotated{
+    grid-area: j9;
+    transform: scaleX(-1);
+  }
+  
   .jalineacion1-10{ 
     grid-area: j10;
+  }
+  .jalineacion1-10rotated{
+    grid-area: j10;
+    transform: scaleX(-1);
   }
   .jalineacion1-11{ 
     grid-area: j11;
     transform: translateX(-20px);
   }
+  .jalineacion1-11rotated{
+    grid-area: j11;
+    transform: translateX(-20px) scaleX(-1);
+  }
+  
   /* Alineacion para 4-4-2*/
+  
   .alineacion2{
    display: grid;
    grid-template-columns: repeat(6,1fr);
@@ -97,43 +152,96 @@
   .jalineacion2-1{ 
     grid-area: j1;
   }
+  .jalineacion2-1rotated{
+    grid-area: j1;
+    transform: scaleX(-1);
+  }
    .jalineacion2-2{ 
     grid-area: j2;
     transform: translateY(-50px);
   }
+  .jalineacion2-2rotated{
+    grid-area: j2;
+    transform: translateY(-50px) scaleX(-1);
+  }
+  
   .jalineacion2-3{ 
     grid-area: j3;
     transform: translateY(-40px);
   }
+  .jalineacion2-3rotated{
+    grid-area: j3;
+    transform: translateY(-40px) scaleX(-1)
+    ;}
+  
   .jalineacion2-4{ 
     grid-area: j4;
     transform: translateY(-20px);
   }
+  .jalineacion2-4rotated{
+    grid-area: j4;
+    transform: translateY(-20px) scaleX(-1);
+  }
+  
   .jalineacion2-5{ 
     grid-area: j5;
     transform: translateY(-10px);
   }
+  .jalineacion2-5rotated{
+    grid-area: j5;
+    transform: translateY(-10px) scaleX(-1);
+  }
+  
   .jalineacion2-6{ 
     grid-area: j6;
     transform: translateY(-40px) translateX(25px);
   }
+  .jalineacion2-6rotated{
+    grid-area: j6;
+    transform: translateY(-40px) translateX(25px) scaleX(-1);
+  }
+  
   .jalineacion2-7{ 
     grid-area: j7;
     transform: translateY(-50px) translateX(25px);
   }
+  .jalineacion2-7rotated{
+    grid-area: j7;
+    transform: translateY(-50px) translateX(25px) scaleX(-1);
+  }
+  
   .jalineacion2-8{ 
     grid-area: j8;
     transform: translateY(-20px) translateX(25px);
   }
+  .jalineacion2-8rotated{
+    grid-area: j8;
+    transform: translateY(-20px) translateX(25px) scaleX(-1);
+  }
+  
   .jalineacion2-9{ 
     grid-area: j9;
     transform: translateY(-10px) translateX(25px);
   }
+  .jalineacion2-9rotated{
+    grid-area: j9;
+    transform: translateY(-10px) translateX(25px) scaleX(-1);
+  }
+  
   .jalineacion2-10{ 
     grid-area: j10;
   }
+  .jalineacion2-10rotated{
+    grid-area: j10;
+    transform: scaleX(-1);
+  }
+  
   .jalineacion2-11{ 
     grid-area: j11;
+  }
+  .jalineacion2-11rotated{
+    grid-area: j11;
+    transform: scaleX(-1);
   }
   
   /* Alineacion para 4-2-3-1*/
@@ -157,45 +265,99 @@
     grid-area: j1;
     transform: translateY(10px);
   }
-   .jalineacion3-2{ 
+  .jalineacion3-1rotated{
+    grid-area: j1;
+    transform:translateY(10px) scaleX(-1);
+  }
+   
+  .jalineacion3-2{ 
     grid-area: j2;
     transform: translateY(-50px);
   }
+  .jalineacion3-2rotated{
+    grid-area: j2;
+    transform:translateY(-50px) scaleX(-1);
+  }
+  
   .jalineacion3-3{ 
     grid-area: j3;
     transform: translateY(-40px);
   }
+  .jalineacion3-3rotated{
+    grid-area: j3;
+    transform:translateY(-40px) scaleX(-1);
+  }
+  
   .jalineacion3-4{ 
     grid-area: j4;
     transform: translateY(-20px);
   }
+  .jalineacion3-4rotated{
+    grid-area: j4;
+    transform:translateY(-20px) scaleX(-1);
+  }
+  
   .jalineacion3-5{ 
     grid-area: j5;
     transform: translateY(-10px);
   }
+  .jalineacion3-5rotated{
+    grid-area: j5;
+    transform:translateY(-10px) scaleX(-1);
+  }
+
   .jalineacion3-6{ 
     grid-area: j6;
     transform: translateY(-30px) translateX(10px);
   }
+  .jalineacion3-6rotated{
+    grid-area: j6;
+    transform:translateY(-30px) scaleX(-1);
+  }
+  
   .jalineacion3-7{ 
     grid-area: j7;
     transform: translateY(-20px) translateX(10px);
   }
+  .jalineacion3-7rotated{
+    grid-area: j7;
+    transform:translateY(-20px) scaleX(-1);
+  }
+  
   .jalineacion3-8{ 
     grid-area: j8;
     transform: translateX(20px);
   }
+  .jalineacion3-8rotated{
+    grid-area: j8;
+    transform:translateX(20px) scaleX(-1);
+  }
+  
   .jalineacion3-9{ 
     grid-area: j9;
     transform: translateX(20px);
   }
+  .jalineacion3-9rotated{
+    grid-area: j9;
+    transform:translateX(20px) scaleX(-1);
+  }
+
   .jalineacion3-10{ 
     grid-area: j10;
     transform: translateX(20px);
   }
+  .jalineacion3-10rotated{
+    grid-area: j10;
+    transform:translateX(20px) scaleX(-1);
+  }
+  
   .jalineacion3-11{ 
     grid-area: j11;
     transform: translateX(-20px);
+  }
+  .jalineacion3-11rotated{
+    grid-area: j11;
+    transform:translateY(-20px) scaleX(-1);
   }
   
   /* Alineacion para 3-5-2*/
@@ -218,43 +380,98 @@
   .jalineacion4-1{ 
     grid-area: j1;
   }
-   .jalineacion4-2{ 
+  .jalineacion4-1rotated{
+    grid-area: j1;
+    transform:scaleX(-1);
+  }
+   
+  .jalineacion4-2{ 
     grid-area: j2;
     transform: translateY(-5px);
   }
+  .jalineacion4-2rotated{
+    grid-area: j2;
+    transform:translateY(-5px) scaleX(-1);
+  }
+
   .jalineacion4-3{ 
     grid-area: j3;
   }
+  .jalineacion4-3rotated{
+    grid-area: j3;
+    transform:scaleX(-1);
+  }
+  
   .jalineacion4-4{ 
     grid-area: j4;
     transform: translateY(5px);
   }
+  .jalineacion4-4rotated{
+    grid-area: j4;
+    transform: translateY(5px) scaleX(-1);
+  }
+  
   .jalineacion4-5{ 
     grid-area: j5;
     transform: translateY(-10px) translateX(-5px);
   }
+  .jalineacion4-5rotated{
+    grid-area: j5;
+    transform: translateY(-10px) translateX(-5px) scaleX(-1);
+  }
+  
   .jalineacion4-6{ 
     grid-area: j6;
     transform: translateX(-5px);
   }
+  .jalineacion4-6rotated{
+    grid-area: j6;
+    transform: translateX(-5px) scaleX(-1);
+  }
+  
   .jalineacion4-7{ 
     grid-area: j7;
     transform: translateX(-40px) translateY(-5px);
   }
+  .jalineacion4-7rotated{
+    grid-area: j7;
+    transform: translateX(-40px) translateY(-5px) scaleX(-1);
+  }
+  
   .jalineacion4-8{ 
     grid-area: j8;
     transform: translateX(-40px) translateY(5px);
   }
+  .jalineacion4-8rotated{
+    grid-area: j8;
+    transform: translateX(-40px) translateY(5px) scaleX(-1);
+  }
+  
   .jalineacion4-9{ 
     grid-area: j9;
     transform: translateX(-5px)
   }
+  .jalineacion4-9rotated{
+    grid-area: j9;
+    transform: translateX(-5px) scaleX(-1);
+  }
+  
   .jalineacion4-10{ 
     grid-area: j10;
   }
+  .jalineacion4-10rotated{
+    grid-area: j10;
+    transform:scaleX(-1);
+  }
+  
   .jalineacion4-11{ 
     grid-area: j11;
   }
+  .jalineacion4-11rotated{
+    grid-area: j11;
+    transform:scaleX(-1);
+  }
+
   /* Alineacion para 5-3-2*/
 
   .alineacion5{
@@ -276,39 +493,93 @@
     grid-area: j1;
     transform: translateY(10px);
   }
+  .jalineacion5-1rotated{
+    grid-area: j1;
+    transform: translateY(10px) scaleX(-1);
+  }
+
    .jalineacion5-2{ 
     grid-area: j2;
     transform: translateX(25px);
   }
+  .jalineacion5-2rotated{
+    grid-area: j2;
+    transform: translateX(25px) scaleX(-1);
+  }
+
   .jalineacion5-3{ 
     grid-area: j3;
   }
+  .jalineacion5-3rotated{
+    grid-area: j3;
+    transform: scaleX(-1);
+  }
+
   .jalineacion5-4{ 
     grid-area: j4;
   }
+  .jalineacion5-4rotated{
+    grid-area: j4;
+    transform: scaleX(-1);
+  }
+
   .jalineacion5-5{ 
     grid-area: j5;
   }
+  .jalineacion5-5rotated{
+    grid-area: j5;
+    transform: scaleX(-1);
+  }
+
   .jalineacion5-6{ 
     grid-area: j6;
     transform: translateX(25px);
   }
+  .jalineacion5-6rotated{
+    grid-area: j6;
+    transform: translateX(25px) scaleX(-1);
+  }
+
   .jalineacion5-7{ 
     grid-area: j7;
   }
+  .jalineacion5-7rotated{
+    grid-area: j7;
+    transform: scaleX(-1);
+  }
+
   .jalineacion5-8{ 
     grid-area: j8;
     transform: translateX(-10px);
   }
+  .jalineacion5-8rotated{
+    grid-area: j8;
+    transform: translateX(-10px) scaleX(-1);
+  }
+
   .jalineacion5-9{ 
     grid-area: j9;
     transform: translateX(-10px);
   }
+  .jalineacion5-9rotated{
+    grid-area: j9;
+    transform: translateX(-10px) scaleX(-1);
+  }
+
   .jalineacion5-10{ 
     grid-area: j10;
     transform: translateX(20px);
   }
+  .jalineacion5-10rotated{
+    grid-area: j10;
+    transform: translateX(20px) scaleX(-1);
+  }
+  
   .jalineacion5-11{ 
     grid-area: j11;
     transform: translateX(20px);
+  }
+  .jalineacion5-11rotated{
+    grid-area: j11;
+    transform: translateX(20px) scaleX(-1);
   }

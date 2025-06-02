@@ -19,6 +19,9 @@
     grid-column: 5/6;
     grid-row: 1/4;
 }
+.awayFormation{
+    transform: scaleX(-1);
+}
 .marcador{
     display: flex;
     font-size: x-large;
