@@ -2,7 +2,7 @@
         <div class="infoMatch">
             <div class="flex flex-col items-center infoTeam1">
                 <img src="escudo1.png" alt="Escudo" class="escudo"/>
-                <p class="fontBold text-main">BAR</p>
+                <p class="fontBold {{isHomeTeamSelected() ? 'text-main' : 'text-black'}}">BAR</p>
                 <p class="fontBold">4-3-3</p>
             </div>
             <div class="buttons">
@@ -14,7 +14,7 @@
             </div>
             <div class="flex flex-col items-center infoTeam2">
                 <img src="escudo1.png" alt="Escudo" class="escudo"/>
-                <p class="fontBold">BAR</p>
+                <p class="fontBold {{!isHomeTeamSelected() ? 'text-main' : 'text-black'}}">BAR</p>
                 <p class="fontBold">4-3-3</p>
             </div>
         </div>
@@ -41,13 +41,21 @@
                   </div>
             </div>
         </div>
-        <div>
+        <!--Usar en esta parte swiper para que este componente no ocupe tanto -->
+        <div class="w-full flex flex-col items-center gap-2">
             <p class="fontBold">Suplentes</p>
-            <div>
-                <p>A</p>
+            <div class="suplentes">
+                @for (playerItem of homeFormationPlayers(); track $index) {
+                      <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" [playerMedia]="playerItem.media" class="z-20 jugador"/>
+                    }
             </div>
         </div>
-        <div>
-            
+        <div class="w-full flex flex-col items-center">
+            <p class="font-bold">Estadísticas</p>
+            <div class="fieldStatsContainer">
+                @for (fieldMatch of fieldMatchStats(); track $index) {
+                    <field-match-stats [fieldName]="fieldMatch.field" [homeStats]="fieldMatch.homeStats" [awayStats]="fieldMatch.awayStats" [isHomeSelected]="isHomeTeamSelected()"/>
+                }
+            </div>
         </div>
     </div>

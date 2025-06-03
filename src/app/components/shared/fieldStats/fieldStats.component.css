@@ -9,7 +9,6 @@
     grid-template-rows: 1fr 1fr 1fr;
     flex-direction: row; 
     justify-content: space-between;
-    align-items: center;
 }
 .infoTeam1{
     grid-column: 1/2;
@@ -36,7 +35,6 @@
     width: 15rem;
     height: 2rem;
     background-color: black;
-    border: 1px solid magenta;
     border-radius: 1rem;
     color: white;
     grid-column: 3/4;
@@ -48,4 +46,20 @@
 }
 .fontBold{
     font-weight: bold;
+}
+.suplentes{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 .8rem;
+    gap: .4rem;
+}
+.fieldStatsContainer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: .8rem;
+    padding: .8rem 0;
 }
