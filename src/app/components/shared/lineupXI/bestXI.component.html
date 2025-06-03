@@ -36,7 +36,14 @@
           </div>
     </div>
       @if (isClubXI()) {
-        <p class="font-bold mt-2">Suplentes</p>
+        <div class="w-full flex flex-col items-center gap-2">
+            <p class="fontBold">Suplentes</p>
+            <div class="suplentes">
+                @for (playerItem of formationPlayers; track $index) {
+                      <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" [playerMedia]="playerItem.media" class="z-20 jugador"/>
+                    }
+            </div>
+        </div>
       }
   </div>
 </container>

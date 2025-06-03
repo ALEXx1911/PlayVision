@@ -1,6 +1,6 @@
 import { Component, input, signal } from "@angular/core";
 import { GeneralContainer } from "../component-container/container.component";
-import { PlayerIconComponent } from "../alineationXI/playerIconComponent/playerIcon.component";
+import { PlayerIconComponent } from "../lineupXI/playerIconComponent/playerIcon.component";
 import { getFormationCode } from "../../../pages/utils/utilidades";
 import { FieldMatchStatsComponent } from "./fieldMatchStats/fieldMatchStats.component";
 
@@ -8,7 +8,7 @@ import { FieldMatchStatsComponent } from "./fieldMatchStats/fieldMatchStats.comp
     selector: "field-stats",
     imports: [PlayerIconComponent, FieldMatchStatsComponent],
     templateUrl: "./fieldStats.component.html",
-    styleUrls: ["../alineationXI/bestXI.component.css", "./fieldStats.component.css"],
+    styleUrls: ["../lineupXI/bestXI.component.css", "./fieldStats.component.css"],
 })
 export class FieldStatsComponent {
     readonly homeLineUpCode = input<string>("");

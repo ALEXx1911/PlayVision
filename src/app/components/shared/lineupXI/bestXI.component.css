@@ -583,3 +583,11 @@
     grid-area: j11;
     transform: translateX(20px) scaleX(-1);
   }
+  .suplentes{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 .8rem;
+    gap: .4rem;
+}

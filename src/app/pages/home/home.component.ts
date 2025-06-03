@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { LeagueMatches } from "./league-matches/league-matches.component";
-import { BestXI } from "../../components/shared/alineationXI/bestXI.component";
+import { BestXI } from "../../components/shared/lineupXI/bestXI.component";
 
 @Component({
   selector: 'app-home',

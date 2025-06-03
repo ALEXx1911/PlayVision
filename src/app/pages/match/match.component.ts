@@ -2,7 +2,7 @@ import { Component, input} from '@angular/core';
 import { GeneralContainer } from "../../components/shared/component-container/container.component";
 import { LeagueColumns } from '../utils/column-headers';
 import { SpecificStats } from "../../components/shared/specific-stats/specific-stats.component";
-import { BestXI } from "../../components/shared/alineationXI/bestXI.component";
+import { BestXI } from "../../components/shared/lineupXI/bestXI.component";
 import { LeagueMatches } from "../home/league-matches/league-matches.component";
 import { FieldStatsComponent } from "../../components/shared/fieldStats/fieldStats.component";
 
