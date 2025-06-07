@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { SearchBarComponent } from "./searchbar/searchbar.component";
 import { FormsModule } from '@angular/forms';

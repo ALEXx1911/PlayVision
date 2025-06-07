@@ -1,7 +1,7 @@
 import { Component, input, signal } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
 import { LucideAngularModule } from "lucide-angular";
-import { ColumnDef, createAngularTable, FlexRenderDirective, getCoreRowModel} from "@tanstack/angular-table";
+import {  createAngularTable, FlexRenderDirective, getCoreRowModel} from "@tanstack/angular-table";
 import { NgClass } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { ClubLeaguePosition } from "../../../../models/stats-interfaces";

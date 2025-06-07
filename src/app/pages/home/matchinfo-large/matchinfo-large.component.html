@@ -1,16 +1,27 @@
-<div class="w-full h-fit border-2 border-main grid grid-cols-[1fr,auto,1fr] grid-rows-[auto,auto] rounded-2xl font-bold">
-    <span class="col-start-2 row-start-1 text-main">{{matchInfo().time}}</span>
-    <div class="col-start-1 row-start-2 flex w-full justify-start content-center">
-        <lucide-angular [img]="downArrow" class="fill-black" color="#ffffffff"/>
+<cdk-accordion class="w-full h-fit border-2 border-main grid grid-cols-[1fr,auto,1fr] grid-rows-[auto,auto] rounded-2xl font-bold">
+    <div class="col-start-1 row-start-1 row-end-2 flex w-full items-center">
+        <button (click)="item.toggle()">
+            <lucide-angular [img]="downArrow" class="fill-black" color="#ffffffff"/>
+        </button>
         <img class="w-[50px] h-[50px]" src="{{matchInfo().homeTeamLogo}}" alt="logo1">
         <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().homeTeam}}</a>
     </div>
-    <span class="col-start-2 row-start-2 w-fit">{{matchInfo().score}}</span>
-    <div class="col-start-3 row-start-2 flex w-full justify-end">
+    <div class="col-start-2 row-start-1 row-end-2 w-fit flex flex-col items-center ">
+        <span class="col-start-2 row-start-1 text-main">{{matchInfo().time}}</span>
+        <span class="">{{matchInfo().score}}</span>
+        <div class="flex gap-1 mb-1">
+            <a [routerLink]="'/match/1/'"><span class="font-medium">Stats</span></a>
+        </div>
+    </div>
+    <div class="col-start-3 row-start-1 row-end-2 flex w-full justify-end items-center">
         <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().awayTeam}}</a>
         <img class="w-[50px] h-[50px]" src="{{matchInfo().awayTeamLogo}}" alt="logo2">
-        <a [routerLink]="'/match/1/'">
-            <lucide-angular [img]="chartIcon"/>
-        </a>
     </div>
-</div>
+    <cdk-accordion-item #item="cdkAccordionItem" class="w-full col-start-1 col-end-4">
+        <div class="w-full flex  overflow-hidden transition-[max-height] duration-300 ease-in-out h-fit  row-start-2 row-end-3"
+                [style.maxHeight]="item.expanded ? '1000px' : '0px'">
+                <div class="w-full flex justify-center">AAA</div>
+                <div class="w-full flex justify-center">BBB</div>
+        </div>
+    </cdk-accordion-item>
+</cdk-accordion>                  

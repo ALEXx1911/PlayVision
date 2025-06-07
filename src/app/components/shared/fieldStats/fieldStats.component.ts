@@ -1,5 +1,4 @@
 import { Component, input, signal } from "@angular/core";
-import { GeneralContainer } from "../component-container/container.component";
 import { PlayerIconComponent } from "../lineupXI/playerIconComponent/playerIcon.component";
 import { getFormationCode } from "../../../pages/utils/utilidades";
 import { FieldMatchStatsComponent } from "./fieldMatchStats/fieldMatchStats.component";

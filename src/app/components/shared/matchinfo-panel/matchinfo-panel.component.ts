@@ -1,10 +1,9 @@
 import { Component, input } from "@angular/core";
 import { RouterLink } from "@angular/router";
-
 @Component({
     selector:"matchesinfo-panel",
     imports: [RouterLink],
-    templateUrl:"./matchinfo-panel.component.html",
+    templateUrl:"./matchinfo-panel.component.html"
 })
 export class MatchInfo{
     //Aqui van todos los partidos que cambian dinamicamente

@@ -1,6 +1,6 @@
 import { Component, signal } from "@angular/core";
 import { Icons } from "../../utils/icons";
-import { LucideAngularModule, Trophy } from "lucide-angular";
+import { LucideAngularModule} from "lucide-angular";
 import { TrophyStatsColumns } from "../../utils/column-headers";
 import { PalmaresComponent } from "../../../components/shared/palmares/palmares.component";
 import { HorizontalCompareChartComponent } from "../../../components/shared/charts/compareChart/horizontalCompareChart.component";

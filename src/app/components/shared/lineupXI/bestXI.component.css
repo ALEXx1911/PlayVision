@@ -10,19 +10,7 @@
  .jugador{
    overflow: visible;
   }
-  .jugador::after {
-       content: attr(data-name);
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       pointer-events: none;
-       z-index: 30;
-     }
+  
  /* Alineacion para 4-3-3*/ 
  
  .alineacion1{

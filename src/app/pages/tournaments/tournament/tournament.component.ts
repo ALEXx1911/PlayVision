@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { BestPlayersStats } from "../best-players-stats/best-players-stats.component";
-import { BestXI } from "../../../components/shared/lineupXI/bestXI.component";
+import { NuevoFieldComponent } from "../../../components/shared/nuevo-field/nuevo-field.component";
+import { GeneralContainer } from "../../../components/shared/component-container/container.component";
 
 @Component({
   selector: 'app-tournament',
-  imports: [BestPlayersStats, BestXI],
+  imports: [BestPlayersStats, NuevoFieldComponent, GeneralContainer],
   templateUrl: './tournament.component.html'
 })
 export default class TournamentComponent {

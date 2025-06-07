@@ -1,0 +1,39 @@
+<div class="w-full border-2 flex flex-col gap-2 items-center">
+    @if (isMatchXI()) {
+        <div class="w-full flex flex-col gap-2 items-center">
+            <div class="border-1 border-main w-[15rem] h-[1.8rem] flex rounded-2xl mt-2 text-white bg-black">
+                    <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === true" [class.bg-black]="isHomeTeamSelected() !== true" (click)="changeTeamSelected(true)">Home Team</button>
+                    <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === false" [class.bg-black]="isHomeTeamSelected() !== false" (click)="changeTeamSelected(false)">Away Team</button>
+            </div>
+            <div class="w-full flex justify-evenly h-fit">
+                <button class="border-2 border-black font-semibold text-white bg-black rounded-2xl px-2 {{viewMode() === 'lineups' ? 'bg-main' : ''}}" (click)="changeViewMode('lineups')"                
+                >Alineacion</button>
+                <button class="border-2 border-black font-semibold text-white bg-black rounded-2xl px-2 {{viewMode() === 'heatmap' ? 'bg-main' : ''}}"  (click)="changeViewMode('heatmap')">Mapa Calor</button>
+                <button class="border-2 border-black font-semibold text-white bg-black rounded-2xl px-2 {{viewMode() === 'shotmap' ? 'bg-main' : ''}}" (click)="changeViewMode('shotmap')">Tiros</button>
+                <button class="border-2 border-black font-semibold text-white bg-black rounded-2xl px-2 {{viewMode() === 'goalmap' ? 'bg-main' : ''}}" (click)="changeViewMode('goalmap')">Goles</button>
+            </div>
+        </div>
+    }
+    <div #chartContainer class="w-full"></div>
+
+    @if (isMatchXI()) {
+        <div class="w-full flex flex-col items-center gap-2">
+            <p class="fontBold">Suplentes</p>
+                <swiper-container class="w-full" [slidesPerView]="8" [spaceBetween]="10" [navigation]="true">
+                    @for (playerItem of alineacion1.players; track $index) {
+                        <swiper-slide>
+                                <player-icon [attr.data.name]="playerItem.name" [playerName]="playerItem.name" class="w-[20px]"/>
+                        </swiper-slide>
+                        }
+                </swiper-container>
+        </div>
+        <div class="w-full flex flex-col items-center">
+            <p class="font-bold mb-3">Estadísticas</p>
+            <div class="w-full h-fit flex flex-wrap gap-y-2">
+                @for (fieldMatch of fieldMatchStats; track $index) {
+                    <field-match-stats [fieldName]="fieldMatch.field" [homeStats]="fieldMatch.homeStats" [awayStats]="fieldMatch.awayStats" [isHomeSelected]="isHomeTeamSelected()"/>
+                }
+            </div>
+        </div>
+    }
+</div>
