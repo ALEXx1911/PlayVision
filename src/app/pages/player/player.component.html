@@ -1,45 +1,47 @@
-<div class="flex flex-col gap-4 px-1">
-    <div class="w-full text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
-    grid grid-cols-2-[auto-2fr] grid-rows-2- gap-y-2 text-sm p-2">
-        <div class="w-full h-full flex justify-center items-center col-start-1 col-end-2 row-start-1 row-end-3">
-            <img src="escudo1.png" alt="Escudo" class="w-16 h-16"/>
-        </div>
-        <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex gap-6">
-            <div class="flex flex-col gap-2">
-                <div class="font-semibold">Nombre: Pedri</div>
-                <div class="font-semibold">Edad: 23</div>
+<div class="w-full flex flex-col items-center">
+    <div class="flex flex-col gap-4 px-1">
+        <div class="w-full text-white mt-2.5 h-[fit] rounded-md overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]
+        grid grid-cols-2-[auto-2fr] grid-rows-2- gap-y-2 text-sm p-2 md:text-lg">
+            <div class="w-full h-full flex justify-center items-center col-start-1 col-end-2 row-start-1 row-end-3 sm:h-[8rem]">
+                <img src="escudo1.png" alt="Escudo" class="w-16 h-16 sm:w-25 sm:h-25"/>
             </div>
-            <div class="flex flex-col gap-2">
-                <div class="font-semibold">Apellidos: González López</div>
-                <div class="font-semibold">Altura: 1,74</div>
-            </div>
-        </div>
-        <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex gap-6">
-            <div class="flex flex-col gap-2">
-                <div class="font-semibold flex gap-2 items-center">
-                    Nacionalidad: Española
-                    <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5" />
+            <div class="col-start-2 col-end-3 row-start-1 row-end-2 flex gap-6">
+                <div class="flex flex-col gap-2">
+                    <div class="font-semibold">Nombre: Pedri</div>
+                    <div class="font-semibold">Edad: 23</div>
                 </div>
-                <div class="font-semibold">Posición: Centrocampista</div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-semibold">Apellidos: González López</div>
+                    <div class="font-semibold">Altura: 1,74</div>
+                </div>
             </div>
-            <div class="flex flex-col gap-2">
-                <div class="font-semibold">Dorsal: 8</div>
-                <div class="font-semibold">Pie: D</div>
+            <div class="col-start-2 col-end-3 row-start-2 row-end-3 flex gap-6">
+                <div class="flex flex-col gap-2">
+                    <div class="font-semibold flex gap-2 items-center">
+                        Nacionalidad: Española
+                        <img src="https://flagcdn.com/es.svg" alt="España" class="w-5 h-3.5 sm:w-8 sm:h-5" />
+                    </div>
+                    <div class="font-semibold">Posición: Centrocampista</div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-semibold">Dorsal: 8</div>
+                    <div class="font-semibold">Pie: D</div>
+                </div>
             </div>
         </div>
+        <container [title]="'Temp. Actual'" [isCollapsable]="true" [isCollapsed]="false">
+            <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
+        </container>
+        <container [title]="'Trayectoria'" [isCollapsable]="true" [isCollapsed]="false">
+            <specific-stats [defaultColumns]="careerColumns" [data]="data2()" [title]="''"/>
+        </container>
+        <container [title]="'Selección'" [hasFlag]="true" [isCollapsable]="true" [isCollapsed]="false">
+            <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
+        </container>
+        <container [title]="'Gráfico Estadísticas'" [isCollapsable]="true" [isCollapsed]="true">
+            <player-chart [chartData]="playerStats"/>
+        </container>
+        <palmares [palmares]="palmares()" [tableTitle]="'Palmarés'"/>
+        
     </div>
-    <container [title]="'Temp. Actual'" [isCollapsable]="true" [isCollapsed]="false">
-        <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
-    </container>
-    <container [title]="'Trayectoria'" [isCollapsable]="true" [isCollapsed]="false">
-        <specific-stats [defaultColumns]="careerColumns" [data]="data2()" [title]="''"/>
-    </container>
-    <container [title]="'Selección'" [hasFlag]="true" [isCollapsable]="true" [isCollapsed]="false">
-        <specific-stats [defaultColumns]="tempActualColumns" [data]="data1()" [title]="''"/>
-    </container>
-    <container [title]="'Gráfico Estadísticas'" [isCollapsable]="true" [isCollapsed]="true">
-        <player-chart [chartData]="playerStats"/>
-    </container>
-    <palmares [palmares]="palmares()" [tableTitle]="'Palmarés'"/>
-    
 </div>

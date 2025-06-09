@@ -1,13 +1,15 @@
-<div class="w-full text-white mt-2.5 h-[85px] rounded-[1px] overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]">
-    <div class="flex items-center justify-center gap-4">
-        <img class=" w-[60px] h-[60px]"
-          alt="FC Barcelona Logo" src="escudo1.png"/>
-        <div class="font-extrabold text-[15px] text-center tracking-[0] leading-[normal]">
-              F.C BARCELONA
-        </div>
-        <img class=" w-5 h-5"
-          alt="Spain flag" src="spain.png"/>
+<div class="w-full h-fit flex flex-col items-center">
+  <div class="w-full sm:w-[900px] text-white mt-2.5 h-[85px] sm:h-[8rem] rounded-2xl overflow-hidden [background:linear-gradient(0deg,rgba(81,49,243,1)_0%,rgba(0,0,0,1)_73%)]">
+      <div class="flex items-center justify-center gap-4">
+          <img class=" w-[60px] h-[60px] sm:w-[6rem] sm:h-[6rem]"
+            alt="FC Barcelona Logo" src="escudo1.png"/>
+          <div class="font-extrabold text-[15px] text-center tracking-[0] leading-[normal] sm:text-lg">
+                F.C BARCELONA
+          </div>
+          <img class=" w-5 h-5 sm:w-10 sm:h-10"
+            alt="Spain flag" src="spain.png"/>
+      </div>
+      <navbar [options]="navOptions()"></navbar>
     </div>
-    <navbar [options]="navOptions()"></navbar>
+    <router-outlet></router-outlet>
 </div>
-  <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 <div class="w-full flex justify-around">
     @for (option of options(); track option.label) {
-        <a [routerLink]="option.route" routerLinkActive="bg-black/50" class="w-full py-1 rounded-xs text-center font-bold text-xs">
+        <a [routerLink]="option.route" routerLinkActive="bg-black/50" class="w-full py-1 rounded-xs text-center font-bold text-xs sm:text-[1rem]">
             {{option.label}}
         </a>
     }

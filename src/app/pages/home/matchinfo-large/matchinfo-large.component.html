@@ -3,19 +3,19 @@
         <button (click)="item.toggle()">
             <lucide-angular [img]="downArrow" class="fill-black" color="#ffffffff"/>
         </button>
-        <img class="w-[50px] h-[50px]" src="{{matchInfo().homeTeamLogo}}" alt="logo1">
-        <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().homeTeam}}</a>
+        <img class="w-[50px] h-[50px] sm:w-[4rem] sm:h-[4rem]" src="{{matchInfo().homeTeamLogo}}" alt="logo1">
+        <a [routerLink]="'/club/1/partidosClub'" class="text-sm sm:text-lg">{{matchInfo().homeTeam}}</a>
     </div>
     <div class="col-start-2 row-start-1 row-end-2 w-fit flex flex-col items-center ">
         <span class="col-start-2 row-start-1 text-main">{{matchInfo().time}}</span>
         <span class="">{{matchInfo().score}}</span>
         <div class="flex gap-1 mb-1">
-            <a [routerLink]="'/match/1/'"><span class="font-medium">Stats</span></a>
+            <a [routerLink]="'/match/1/'"><span class="font-medium underline">Stats</span></a>
         </div>
     </div>
     <div class="col-start-3 row-start-1 row-end-2 flex w-full justify-end items-center">
-        <a [routerLink]="'/club/1/partidosClub'" class="text-sm">{{matchInfo().awayTeam}}</a>
-        <img class="w-[50px] h-[50px]" src="{{matchInfo().awayTeamLogo}}" alt="logo2">
+        <a [routerLink]="'/club/1/partidosClub'" class="text-sm sm:text-lg">{{matchInfo().awayTeam}}</a>
+        <img class="w-[50px] h-[50px] sm:w-[4rem] sm:h-[4rem]" src="{{matchInfo().awayTeamLogo}}" alt="logo2">
     </div>
     <cdk-accordion-item #item="cdkAccordionItem" class="w-full col-start-1 col-end-4">
         <div class="w-full flex  overflow-hidden transition-[max-height] duration-300 ease-in-out h-fit  row-start-2 row-end-3"

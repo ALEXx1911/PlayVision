@@ -1,20 +1,21 @@
-<div class="flex flex-col w-full h-fit overflow-hidden border-1 border-black rounded-xs">
-    <cdk-accordion class="w-full h-fit">
+<div class="flex flex-col items-center w-full h-fit overflow-hidden rounded-xs">
+    <cdk-accordion class="w-full h-fit sm:w-[900px] border-2 border-black rounded-md">
         <cdk-accordion-item #item="cdkAccordionItem" class="w-full h-fit">
-            <div class="w-full h-[28px] p-0.5 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%">
+            <div class="w-full h-[28px] p-0.5 bg-black flex justify-between bg-gradient-to-b from-slate-950 from-43% to-main to-90%
+            sm:h-10">
                 <div class="flex items-center">
-                    <img class="w-5 h-5 mr-1" alt="spain" src="spain.png"/>
+                    <img class="w-5 h-5 mr-1 sm:w-8 sm:h-8 ml-2" alt="spain" src="spain.png"/>
                     <a [routerLink]="[`/ligues/${id}`]">
-                        <span class="font-bold text-white text-xs">La Liga</span>
+                        <span class="font-bold text-white text-xs sm:ml-2 sm:text-lg">La Liga</span>
                     </a>
                     <lucide-angular [img]="bookmarck" class="fill-white"/>
                 </div>
                 <button (click)="item.toggle()" [attr.aria-expanded]="item.expanded" [attr.id]="1"
                 [attr.aria-controls]="'item-body'+ 1">
                 @if (item.expanded) {
-                    <lucide-angular [img]="uparrow" class="fill-white"/>  
+                    <lucide-angular [img]="uparrow" class="fill-white sm:w-8 sm:h-8"/>  
                 }@else {
-                    <lucide-angular [img]="downarrow" class="fill-white"/>
+                    <lucide-angular [img]="downarrow" class="fill-white sm:w-8 sm:h-8"/>
                 }
                 </button>
             </div>

@@ -1,7 +1,7 @@
 <div class="w-full border-2 flex flex-col gap-2 items-center">
     @if (isMatchXI()) {
         <div class="w-full flex flex-col gap-2 items-center">
-            <div class="border-1 border-main w-[15rem] h-[1.8rem] flex rounded-2xl mt-2 text-white bg-black">
+            <div class="border-1 border-main w-[15rem] h-[1.8rem] flex rounded-2xl mt-2 mb-3 text-white bg-black">
                     <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === true" [class.bg-black]="isHomeTeamSelected() !== true" (click)="changeTeamSelected(true)">Home Team</button>
                     <button class="w-full rounded-2xl text-[1rem] font-bold" [class.bg-main]="isHomeTeamSelected() === false" [class.bg-black]="isHomeTeamSelected() !== false" (click)="changeTeamSelected(false)">Away Team</button>
             </div>

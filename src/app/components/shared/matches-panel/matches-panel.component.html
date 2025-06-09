@@ -1,6 +1,6 @@
-<div class="border-1 border-black w-full flex flex-col items-center rounded-xs mt-1 p-1">
+<div class="border-1 border-black w-full h-[6.5rem] flex flex-col items-center rounded-xs mt-1 p-1 sm:h-[7rem]">
     <h4 class="font-bold text-md">Marcadores relevantes</h4>
-    <swiper-container class="w-full" [slidesPerView]="4" [spaceBetween]="10" [navigation]="true" >
+    <swiper-container class="w-full" [slidesPerView]="10" [spaceBetween]="10" [navigation]="true" >
         @for (partido of matches; track partido.id) {
             <swiper-slide class="w-full h-fit">
                 <matchesinfo-panel [partido]="partido"/>
