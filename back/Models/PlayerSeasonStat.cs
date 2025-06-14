@@ -2,23 +2,23 @@
 {
     public class PlayerSeasonStat
     {
-        public int id { get; set; } 
-        public int season_id { get; set; }
-        public int player_id { get; set; }
-        public int team_id { get; set; }
-        public string position { get; set; } = string.Empty;
-        public int matches_played { get; set; }
-        public int goals { get; set; }
-        public int head_goals { get; set; }
-        public int penalty_goals { get; set; }
-        public int freekick_goals { get; set; }
-        public int assists { get; set; }
-        public int yellow_cards { get; set; }
-        public int red_cards { get; set; }
-        public decimal media { get; set; }
-        public decimal total_pass_media { get; set; }
-        public decimal recoveries_media { get; set; }
-        public int cleansheets { get; set; }
+        public int Id { get; set; } 
+        public int SeasonId { get; set; }
+        public int PlayerId { get; set; }
+        public int TeamId { get; set; }
+        public string Position { get; set; } = string.Empty;
+        public int MatchesPlayed { get; set; }
+        public int Goals { get; set; }
+        public int HeadGoals { get; set; }
+        public int PenaltyGoals { get; set; }
+        public int FreekickGoals { get; set; }
+        public int Assists { get; set; }
+        public int YellowCards { get; set; }
+        public int RedCards { get; set; }
+        public decimal Media { get; set; }
+        public decimal TotalPassMedia { get; set; }
+        public decimal RecoveriesMedia { get; set; }
+        public int CleanSheets { get; set; }
 
         // Propiedades de navegación para las relaciones
         public Player? Player { get; set; }

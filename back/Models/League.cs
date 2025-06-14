@@ -2,8 +2,8 @@
 {
     public class League
     {
-        public int id { get; set; }
-        public string name { get; set; } = string.Empty;
-        public string country { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
     }
 }

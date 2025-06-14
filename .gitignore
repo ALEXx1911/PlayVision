@@ -7,9 +7,9 @@
 /bazel-out
 
 # Backend
-/backend/**/bin/
-/backend/**/obj/
-/backend/**/*.user
+/back/**/bin/
+/back/**/obj/
+/back/**/*.user
 
 # Node
 /front/node_modules
@@ -41,6 +41,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+.env
 
 # System files
 .DS_Store

@@ -1,0 +1,11 @@
+{
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/dist/**": true,
+        "**/.git/**": true,
+        "**/tmp/**": true,
+        "**/out-tsc/**": true
+      },
+    "editor.formatOnSave": false,
+    "files.autoSave": "onFocusChange"
+}

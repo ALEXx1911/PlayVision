@@ -2,11 +2,11 @@
 {
     public class Season
     {
-        public int id { get; set; }
-        public int competition_id { get; set; }
-        public int year { get; set; }
-        public DateOnly start_date { get; set; }
-        public DateOnly end_date { get; set; }
+        public int Id { get; set; }
+        public int CompetitionId { get; set; }
+        public int Year { get; set; }
+        public DateOnly StartDate { get; set; }
+        public DateOnly EndDate { get; set; }
 
         public ICollection<TeamSeasonStat> TeamsSeasonStats { get; set; } = new List<TeamSeasonStat>();
         public ICollection<PlayerCompetitionStats> Players { get; set; } = new List<PlayerCompetitionStats>();

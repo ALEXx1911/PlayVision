@@ -7,17 +7,17 @@
         public Match Match { get; set; } = default!;
         public int team_id { get; set; }
         public Team Team { get; set; } = default!;
-        public string team_name { get; set; } = string.Empty;
-        public int goals { get; set; }
-        public int shots { get; set; }
-        public int shots_on_target { get; set; }
-        public int corners { get; set; }
-        public decimal possession { get; set; }
-        public int passes { get; set; }
-        public int fouls { get; set; }
-        public int yellow_cards { get; set; }
-        public int red_cards { get; set; }
-        public int offsides { get; set; }
+        public string TeamName { get; set; } = string.Empty;
+        public int Goals { get; set; }
+        public int Shots { get; set; }
+        public int ShotsOnTarget { get; set; }
+        public int Corners { get; set; }
+        public decimal Possession { get; set; }
+        public int Passes { get; set; }
+        public int Fouls { get; set; }
+        public int YellowCards { get; set; }
+        public int RedCards { get; set; }
+        public int Offsides { get; set; }
 
     }
 }

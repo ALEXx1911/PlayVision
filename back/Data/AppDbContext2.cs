@@ -32,13 +32,13 @@ namespace PlayVisionAPI.Data
             modelBuilder.Entity<Match>()
                 .HasOne(m => m.HomeTeam)
                 .WithMany(t => t.HomeMatches)
-                .HasForeignKey(m => m.home_team_id)
+                .HasForeignKey(m => m.HomeTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Match>()
                 .HasOne(m => m.AwayTeam)
                 .WithMany(t => t.AwayMatches)
-                .HasForeignKey(m => m.away_team_id)
+                .HasForeignKey(m => m.AwayTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Match>()
@@ -56,7 +56,7 @@ namespace PlayVisionAPI.Data
             modelBuilder.Entity<Player>()
                 .HasOne(p => p.Team)
                 .WithMany(t => t.Players)
-                .HasForeignKey(p => p.club_id)
+                .HasForeignKey(p => p.ClubId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Lineup>()
@@ -85,39 +85,39 @@ namespace PlayVisionAPI.Data
             modelBuilder.Entity<Titles>()
                 .HasOne(t => t.Competition)
                 .WithMany(c => c.Titles)
-                .HasForeignKey(t => t.competition_id);
+                .HasForeignKey(t => t.CompetitionId);
 
             modelBuilder.Entity<Titles>()
             .HasOne(t => t.Competition)
             .WithMany(c => c.Titles)
-            .HasForeignKey(t => t.competition_id);
+            .HasForeignKey(t => t.CompetitionId);
 
 
             modelBuilder.Entity<Titles>()
                 .HasOne(t => t.Season)
                 .WithMany(s => s.Titles)
-                .HasForeignKey(h => h.season_id);
+                .HasForeignKey(h => h.SeasonId);
 
             modelBuilder.Entity<TeamSeasonStat>()
                 .HasOne(stat => stat.Team)
                 .WithMany(t => t.SeasonStats)
-                .HasForeignKey(stat => stat.team_id);
+                .HasForeignKey(stat => stat.TeamId);
 
             modelBuilder.Entity<TeamSeasonStat>()
                 .HasOne(stat => stat.Season)
                 .WithMany(s => s.TeamsSeasonStats)
-                .HasForeignKey(stat => stat.season_id);
+                .HasForeignKey(stat => stat.SeasonId);
 
             modelBuilder.Entity<PlayerCompetitionStats>(entity =>
             {
                 entity.HasKey(x => x.Id);
                 entity.HasOne(x => x.Player)
                     .WithMany(p => p.CompetitionStats)
-                    .HasForeignKey(x => x.player_id);
+                    .HasForeignKey(x => x.PlayerId);
 
                 entity.HasOne(x => x.Competition)
                 .WithMany(c => c.PlayerStats)
-                    .HasForeignKey(x => x.competition_id);
+                    .HasForeignKey(x => x.CompetitionId);
 
                 entity.HasOne(x => x.Season)
                     .WithMany(s => s.Players)

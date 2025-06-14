@@ -2,19 +2,19 @@
 {
     public class Match
     {
-        public int id { get; set; }
-        public int season_id { get; set; }
-        public DateTime match_date { get; set; }
-        public int home_team_id { get; set; }
-        public int away_team_id { get; set; }
-        public int home_goals { get; set; }
-        public int away_goals { get; set; }
-        public string? stadium { get; set; } = string.Empty;
-        public TimeOnly start_time { get; set; } = new TimeOnly(0, 0, 0);
-        public string status { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public int SeasonId { get; set; }
+        public DateTime MatchDate { get; set; }
+        public int HomeTeamId { get; set; }
+        public int AwayTeamId { get; set; }
+        public int HomeGoals { get; set; }
+        public int AwayGoals { get; set; }
+        public string? Stadium { get; set; } = string.Empty;
+        public TimeOnly StartTime { get; set; } = new TimeOnly(0, 0, 0);
+        public string Status { get; set; } = string.Empty;
         public int? RoundId { get; set; } 
         public CompetitionRound? Round { get; set; } = default!;
-        public string? description { get; set; } = string.Empty;
+        public string? Description { get; set; } = string.Empty;
         public CompetitionRound? CompetitionRound { get; set; } = default!;
 
         public ICollection<MatchEvent> Events { get; set; } = new List<MatchEvent>();

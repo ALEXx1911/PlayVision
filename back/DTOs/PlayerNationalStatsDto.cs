@@ -1,6 +1,4 @@
 ﻿namespace PlayVisionAPI.DTOs
 {
-    public class PlayerNationalStatsDto : PlayerCompetitionStatsDto
-    {
-    }
+    public class PlayerNationalStatsDto : PlayerCompetitionStatsDto{}
 }

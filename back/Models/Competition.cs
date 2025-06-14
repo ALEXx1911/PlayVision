@@ -2,12 +2,12 @@
 {
     public class Competition
     {
-        public int id { get; set; }
-        public string name { get; set; } = string.Empty;
-        public string type { get; set; } = string.Empty;
-        public string country { get; set; } = string.Empty;
-        public string logo_url { get; set; } = string.Empty;
-        public string club_tournament_type { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
+        public string LogoUrl { get; set; } = string.Empty;
+        public string ClubTournamentType { get; set; } = string.Empty;
 
         //Relaciones
         public ICollection<PlayerCompetitionStats> PlayerStats { get; set; } = new List<PlayerCompetitionStats>();
