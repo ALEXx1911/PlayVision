@@ -1,7 +1,0 @@
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.csproj.AssemblyReference.cache
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.AssemblyInfoInputs.cache
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.AssemblyInfo.cs
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.csproj.CoreCompileInputs.cache
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\monic\source\repos\PlayVisionAPI\PlayVisionAPI\obj\Debug\net8.0\PlayVisionAPI.MvcApplicationPartsAssemblyInfo.cache
