@@ -24,6 +24,7 @@ namespace PlayVisionAPI.Data
         public DbSet<MatchStat> MatchStats => Set<MatchStat>();
         public DbSet<PlayerMatchStats> PlayerMatchStats => Set<PlayerMatchStats>();
         public DbSet<MatchHeatmapPoint> MatchHeatmapPoints { get; set; }
+        public DbSet<PlayerSeasonStat> PlayerSeasonStats => Set<PlayerSeasonStat>();
         //En este metodo se configuran las distintas relaciones que hay entre las tablas de la BBDD
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,7 +57,7 @@ namespace PlayVisionAPI.Data
             modelBuilder.Entity<Player>()
                 .HasOne(p => p.Team)
                 .WithMany(t => t.Players)
-                .HasForeignKey(p => p.ClubId)
+                .HasForeignKey(p => p.CurrentTeamId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Lineup>()

@@ -8,6 +8,7 @@
         public int TeamId { get; set; }
         public string Position { get; set; } = string.Empty;
         public int MatchesPlayed { get; set; }
+        public int MinutesPlayed { get; set; }
         public int Goals { get; set; }
         public int HeadGoals { get; set; }
         public int PenaltyGoals { get; set; }
